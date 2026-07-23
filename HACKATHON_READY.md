@@ -19,8 +19,8 @@ Status as of prep session, before the problem statement drops.
 - [x] .gitignore covering frontend/backend/ai/db/secrets
 - [x] `.github/ISSUE_TEMPLATE/`, `.github/PULL_REQUEST_TEMPLATE.md`
 - [x] 5-branch strategy documented (`main`/`frontend`/`backend`/`ai`/`integration`) with team ownership, commit conventions, PR flow, conflict resolution, emergency recovery
-- [ ] Branches actually created and pushed (`git checkout -b frontend && git push -u origin frontend`, etc.) — README has the exact commands, not run yet since that's a one-time action the repo owner should trigger deliberately
-- [ ] GitHub branch protection on `main` enabled (Settings → Branches — see README)
+- [x] `main`, `frontend`, `backend`, `ai`, `integration` all pushed to GitHub (`sanjeev-builds/Stelantis___`), all carrying today's scaffolding
+- [x] Branch protection on `main` enabled: PR required, 1 approval, **required from you specifically** via `CODEOWNERS` (`require_code_owner_review`), no force-push, no deletion
 
 ## Backend (`backend/`)
 - [x] FastAPI app with health check, JWT auth (demo user), example CRUD (`vehicles`)
