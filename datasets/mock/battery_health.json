@@ -1,0 +1,1202 @@
+[
+  {
+    "id": 1,
+    "vehicle_id": 48,
+    "state_of_charge_pct": 64.9,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 1478,
+    "battery_temp_c": 27.0,
+    "voltage": 342.9,
+    "fast_charge_count": 205
+  },
+  {
+    "id": 2,
+    "vehicle_id": 32,
+    "state_of_charge_pct": 82.5,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 1449,
+    "battery_temp_c": 24.8,
+    "voltage": 402.4,
+    "fast_charge_count": 13
+  },
+  {
+    "id": 3,
+    "vehicle_id": 15,
+    "state_of_charge_pct": 67.2,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 958,
+    "battery_temp_c": 41.9,
+    "voltage": 354.5,
+    "fast_charge_count": 246
+  },
+  {
+    "id": 4,
+    "vehicle_id": 36,
+    "state_of_charge_pct": 85.7,
+    "state_of_health_pct": 85.0,
+    "charge_cycles": 301,
+    "battery_temp_c": 41.7,
+    "voltage": 385.5,
+    "fast_charge_count": 267
+  },
+  {
+    "id": 5,
+    "vehicle_id": 7,
+    "state_of_charge_pct": 70.8,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 1226,
+    "battery_temp_c": 17.6,
+    "voltage": 346.9,
+    "fast_charge_count": 2
+  },
+  {
+    "id": 6,
+    "vehicle_id": 7,
+    "state_of_charge_pct": 83.5,
+    "state_of_health_pct": 94.0,
+    "charge_cycles": 121,
+    "battery_temp_c": 21.2,
+    "voltage": 329.0,
+    "fast_charge_count": 227
+  },
+  {
+    "id": 7,
+    "vehicle_id": 16,
+    "state_of_charge_pct": 7.5,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 936,
+    "battery_temp_c": 31.4,
+    "voltage": 369.7,
+    "fast_charge_count": 133
+  },
+  {
+    "id": 8,
+    "vehicle_id": 38,
+    "state_of_charge_pct": 22.8,
+    "state_of_health_pct": 90.8,
+    "charge_cycles": 184,
+    "battery_temp_c": 42.5,
+    "voltage": 400.9,
+    "fast_charge_count": 250
+  },
+  {
+    "id": 9,
+    "vehicle_id": 24,
+    "state_of_charge_pct": 77.3,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 1246,
+    "battery_temp_c": 21.0,
+    "voltage": 336.7,
+    "fast_charge_count": 136
+  },
+  {
+    "id": 10,
+    "vehicle_id": 26,
+    "state_of_charge_pct": 8.9,
+    "state_of_health_pct": 94.0,
+    "charge_cycles": 121,
+    "battery_temp_c": 20.5,
+    "voltage": 358.7,
+    "fast_charge_count": 133
+  },
+  {
+    "id": 11,
+    "vehicle_id": 14,
+    "state_of_charge_pct": 54.9,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 1454,
+    "battery_temp_c": 32.4,
+    "voltage": 368.4,
+    "fast_charge_count": 190
+  },
+  {
+    "id": 12,
+    "vehicle_id": 11,
+    "state_of_charge_pct": 36.3,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 968,
+    "battery_temp_c": 29.8,
+    "voltage": 376.0,
+    "fast_charge_count": 71
+  },
+  {
+    "id": 13,
+    "vehicle_id": 18,
+    "state_of_charge_pct": 97.1,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 1045,
+    "battery_temp_c": 23.2,
+    "voltage": 343.1,
+    "fast_charge_count": 126
+  },
+  {
+    "id": 14,
+    "vehicle_id": 4,
+    "state_of_charge_pct": 90.8,
+    "state_of_health_pct": 78.0,
+    "charge_cycles": 441,
+    "battery_temp_c": 37.2,
+    "voltage": 332.1,
+    "fast_charge_count": 42
+  },
+  {
+    "id": 15,
+    "vehicle_id": 37,
+    "state_of_charge_pct": 91.4,
+    "state_of_health_pct": 81.0,
+    "charge_cycles": 380,
+    "battery_temp_c": 16.3,
+    "voltage": 333.2,
+    "fast_charge_count": 294
+  },
+  {
+    "id": 16,
+    "vehicle_id": 11,
+    "state_of_charge_pct": 11.0,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 1348,
+    "battery_temp_c": 24.1,
+    "voltage": 401.3,
+    "fast_charge_count": 15
+  },
+  {
+    "id": 17,
+    "vehicle_id": 42,
+    "state_of_charge_pct": 53.8,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 856,
+    "battery_temp_c": 36.5,
+    "voltage": 358.4,
+    "fast_charge_count": 298
+  },
+  {
+    "id": 18,
+    "vehicle_id": 36,
+    "state_of_charge_pct": 47.1,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 809,
+    "battery_temp_c": 18.6,
+    "voltage": 396.3,
+    "fast_charge_count": 265
+  },
+  {
+    "id": 19,
+    "vehicle_id": 12,
+    "state_of_charge_pct": 92.9,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 1413,
+    "battery_temp_c": 43.7,
+    "voltage": 353.3,
+    "fast_charge_count": 62
+  },
+  {
+    "id": 20,
+    "vehicle_id": 33,
+    "state_of_charge_pct": 29.0,
+    "state_of_health_pct": 92.2,
+    "charge_cycles": 157,
+    "battery_temp_c": 42.3,
+    "voltage": 321.0,
+    "fast_charge_count": 122
+  },
+  {
+    "id": 21,
+    "vehicle_id": 41,
+    "state_of_charge_pct": 22.4,
+    "state_of_health_pct": 80.0,
+    "charge_cycles": 400,
+    "battery_temp_c": 35.8,
+    "voltage": 378.9,
+    "fast_charge_count": 70
+  },
+  {
+    "id": 22,
+    "vehicle_id": 42,
+    "state_of_charge_pct": 66.1,
+    "state_of_health_pct": 71.7,
+    "charge_cycles": 566,
+    "battery_temp_c": 32.7,
+    "voltage": 343.4,
+    "fast_charge_count": 190
+  },
+  {
+    "id": 23,
+    "vehicle_id": 28,
+    "state_of_charge_pct": 76.7,
+    "state_of_health_pct": 88.1,
+    "charge_cycles": 238,
+    "battery_temp_c": 23.6,
+    "voltage": 332.0,
+    "fast_charge_count": 61
+  },
+  {
+    "id": 24,
+    "vehicle_id": 3,
+    "state_of_charge_pct": 20.5,
+    "state_of_health_pct": 88.8,
+    "charge_cycles": 224,
+    "battery_temp_c": 35.5,
+    "voltage": 355.0,
+    "fast_charge_count": 122
+  },
+  {
+    "id": 25,
+    "vehicle_id": 14,
+    "state_of_charge_pct": 94.6,
+    "state_of_health_pct": 85.0,
+    "charge_cycles": 300,
+    "battery_temp_c": 25.0,
+    "voltage": 390.3,
+    "fast_charge_count": 101
+  },
+  {
+    "id": 26,
+    "vehicle_id": 17,
+    "state_of_charge_pct": 12.3,
+    "state_of_health_pct": 80.8,
+    "charge_cycles": 385,
+    "battery_temp_c": 22.9,
+    "voltage": 354.7,
+    "fast_charge_count": 278
+  },
+  {
+    "id": 27,
+    "vehicle_id": 20,
+    "state_of_charge_pct": 82.8,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 951,
+    "battery_temp_c": 19.8,
+    "voltage": 376.4,
+    "fast_charge_count": 127
+  },
+  {
+    "id": 28,
+    "vehicle_id": 32,
+    "state_of_charge_pct": 92.0,
+    "state_of_health_pct": 60.3,
+    "charge_cycles": 794,
+    "battery_temp_c": 17.8,
+    "voltage": 332.9,
+    "fast_charge_count": 192
+  },
+  {
+    "id": 29,
+    "vehicle_id": 30,
+    "state_of_charge_pct": 76.0,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 1051,
+    "battery_temp_c": 44.2,
+    "voltage": 345.8,
+    "fast_charge_count": 47
+  },
+  {
+    "id": 30,
+    "vehicle_id": 41,
+    "state_of_charge_pct": 9.6,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 1166,
+    "battery_temp_c": 17.1,
+    "voltage": 403.6,
+    "fast_charge_count": 208
+  },
+  {
+    "id": 31,
+    "vehicle_id": 3,
+    "state_of_charge_pct": 83.6,
+    "state_of_health_pct": 76.0,
+    "charge_cycles": 481,
+    "battery_temp_c": 37.4,
+    "voltage": 369.3,
+    "fast_charge_count": 34
+  },
+  {
+    "id": 32,
+    "vehicle_id": 8,
+    "state_of_charge_pct": 66.7,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 939,
+    "battery_temp_c": 32.4,
+    "voltage": 323.1,
+    "fast_charge_count": 46
+  },
+  {
+    "id": 33,
+    "vehicle_id": 22,
+    "state_of_charge_pct": 75.9,
+    "state_of_health_pct": 98.2,
+    "charge_cycles": 35,
+    "battery_temp_c": 33.8,
+    "voltage": 394.1,
+    "fast_charge_count": 166
+  },
+  {
+    "id": 34,
+    "vehicle_id": 27,
+    "state_of_charge_pct": 56.7,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 971,
+    "battery_temp_c": 37.7,
+    "voltage": 405.3,
+    "fast_charge_count": 202
+  },
+  {
+    "id": 35,
+    "vehicle_id": 2,
+    "state_of_charge_pct": 11.9,
+    "state_of_health_pct": 74.0,
+    "charge_cycles": 520,
+    "battery_temp_c": 43.6,
+    "voltage": 341.3,
+    "fast_charge_count": 14
+  },
+  {
+    "id": 36,
+    "vehicle_id": 39,
+    "state_of_charge_pct": 67.3,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 939,
+    "battery_temp_c": 33.1,
+    "voltage": 355.4,
+    "fast_charge_count": 271
+  },
+  {
+    "id": 37,
+    "vehicle_id": 4,
+    "state_of_charge_pct": 22.5,
+    "state_of_health_pct": 88.9,
+    "charge_cycles": 222,
+    "battery_temp_c": 43.9,
+    "voltage": 402.2,
+    "fast_charge_count": 56
+  },
+  {
+    "id": 38,
+    "vehicle_id": 48,
+    "state_of_charge_pct": 27.4,
+    "state_of_health_pct": 75.2,
+    "charge_cycles": 497,
+    "battery_temp_c": 24.9,
+    "voltage": 346.7,
+    "fast_charge_count": 101
+  },
+  {
+    "id": 39,
+    "vehicle_id": 23,
+    "state_of_charge_pct": 90.1,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 1450,
+    "battery_temp_c": 37.6,
+    "voltage": 371.2,
+    "fast_charge_count": 184
+  },
+  {
+    "id": 40,
+    "vehicle_id": 14,
+    "state_of_charge_pct": 43.6,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 1484,
+    "battery_temp_c": 29.1,
+    "voltage": 391.8,
+    "fast_charge_count": 188
+  },
+  {
+    "id": 41,
+    "vehicle_id": 12,
+    "state_of_charge_pct": 87.5,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 1045,
+    "battery_temp_c": 29.9,
+    "voltage": 386.3,
+    "fast_charge_count": 222
+  },
+  {
+    "id": 42,
+    "vehicle_id": 28,
+    "state_of_charge_pct": 47.6,
+    "state_of_health_pct": 89.6,
+    "charge_cycles": 208,
+    "battery_temp_c": 20.0,
+    "voltage": 322.1,
+    "fast_charge_count": 139
+  },
+  {
+    "id": 43,
+    "vehicle_id": 20,
+    "state_of_charge_pct": 85.7,
+    "state_of_health_pct": 87.9,
+    "charge_cycles": 242,
+    "battery_temp_c": 44.8,
+    "voltage": 394.5,
+    "fast_charge_count": 58
+  },
+  {
+    "id": 44,
+    "vehicle_id": 40,
+    "state_of_charge_pct": 81.0,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 1189,
+    "battery_temp_c": 40.6,
+    "voltage": 382.1,
+    "fast_charge_count": 116
+  },
+  {
+    "id": 45,
+    "vehicle_id": 3,
+    "state_of_charge_pct": 65.8,
+    "state_of_health_pct": 89.0,
+    "charge_cycles": 219,
+    "battery_temp_c": 40.6,
+    "voltage": 373.3,
+    "fast_charge_count": 88
+  },
+  {
+    "id": 46,
+    "vehicle_id": 25,
+    "state_of_charge_pct": 98.5,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 1165,
+    "battery_temp_c": 40.2,
+    "voltage": 346.7,
+    "fast_charge_count": 11
+  },
+  {
+    "id": 47,
+    "vehicle_id": 34,
+    "state_of_charge_pct": 85.7,
+    "state_of_health_pct": 68.8,
+    "charge_cycles": 625,
+    "battery_temp_c": 21.3,
+    "voltage": 345.8,
+    "fast_charge_count": 191
+  },
+  {
+    "id": 48,
+    "vehicle_id": 45,
+    "state_of_charge_pct": 45.5,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 1143,
+    "battery_temp_c": 42.0,
+    "voltage": 332.0,
+    "fast_charge_count": 218
+  },
+  {
+    "id": 49,
+    "vehicle_id": 36,
+    "state_of_charge_pct": 25.1,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 1260,
+    "battery_temp_c": 43.1,
+    "voltage": 333.2,
+    "fast_charge_count": 126
+  },
+  {
+    "id": 50,
+    "vehicle_id": 4,
+    "state_of_charge_pct": 56.7,
+    "state_of_health_pct": 85.7,
+    "charge_cycles": 286,
+    "battery_temp_c": 24.7,
+    "voltage": 351.2,
+    "fast_charge_count": 17
+  },
+  {
+    "id": 51,
+    "vehicle_id": 48,
+    "state_of_charge_pct": 64.7,
+    "state_of_health_pct": 68.5,
+    "charge_cycles": 631,
+    "battery_temp_c": 38.6,
+    "voltage": 393.8,
+    "fast_charge_count": 161
+  },
+  {
+    "id": 52,
+    "vehicle_id": 3,
+    "state_of_charge_pct": 84.4,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 1471,
+    "battery_temp_c": 42.0,
+    "voltage": 329.1,
+    "fast_charge_count": 273
+  },
+  {
+    "id": 53,
+    "vehicle_id": 41,
+    "state_of_charge_pct": 83.3,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 1024,
+    "battery_temp_c": 19.7,
+    "voltage": 409.2,
+    "fast_charge_count": 90
+  },
+  {
+    "id": 54,
+    "vehicle_id": 47,
+    "state_of_charge_pct": 41.4,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 1462,
+    "battery_temp_c": 33.0,
+    "voltage": 322.5,
+    "fast_charge_count": 157
+  },
+  {
+    "id": 55,
+    "vehicle_id": 10,
+    "state_of_charge_pct": 84.7,
+    "state_of_health_pct": 78.3,
+    "charge_cycles": 433,
+    "battery_temp_c": 29.8,
+    "voltage": 381.9,
+    "fast_charge_count": 184
+  },
+  {
+    "id": 56,
+    "vehicle_id": 38,
+    "state_of_charge_pct": 39.1,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 1416,
+    "battery_temp_c": 28.0,
+    "voltage": 384.2,
+    "fast_charge_count": 128
+  },
+  {
+    "id": 57,
+    "vehicle_id": 42,
+    "state_of_charge_pct": 22.6,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 1095,
+    "battery_temp_c": 37.7,
+    "voltage": 344.5,
+    "fast_charge_count": 254
+  },
+  {
+    "id": 58,
+    "vehicle_id": 4,
+    "state_of_charge_pct": 50.9,
+    "state_of_health_pct": 61.5,
+    "charge_cycles": 770,
+    "battery_temp_c": 30.1,
+    "voltage": 386.5,
+    "fast_charge_count": 238
+  },
+  {
+    "id": 59,
+    "vehicle_id": 15,
+    "state_of_charge_pct": 8.1,
+    "state_of_health_pct": 89.6,
+    "charge_cycles": 208,
+    "battery_temp_c": 34.9,
+    "voltage": 383.5,
+    "fast_charge_count": 88
+  },
+  {
+    "id": 60,
+    "vehicle_id": 41,
+    "state_of_charge_pct": 56.9,
+    "state_of_health_pct": 88.3,
+    "charge_cycles": 234,
+    "battery_temp_c": 35.5,
+    "voltage": 367.8,
+    "fast_charge_count": 55
+  },
+  {
+    "id": 61,
+    "vehicle_id": 42,
+    "state_of_charge_pct": 67.6,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 1477,
+    "battery_temp_c": 20.3,
+    "voltage": 334.4,
+    "fast_charge_count": 185
+  },
+  {
+    "id": 62,
+    "vehicle_id": 36,
+    "state_of_charge_pct": 13.4,
+    "state_of_health_pct": 91.3,
+    "charge_cycles": 174,
+    "battery_temp_c": 44.0,
+    "voltage": 350.4,
+    "fast_charge_count": 251
+  },
+  {
+    "id": 63,
+    "vehicle_id": 11,
+    "state_of_charge_pct": 79.4,
+    "state_of_health_pct": 95.2,
+    "charge_cycles": 97,
+    "battery_temp_c": 32.5,
+    "voltage": 336.3,
+    "fast_charge_count": 149
+  },
+  {
+    "id": 64,
+    "vehicle_id": 3,
+    "state_of_charge_pct": 16.5,
+    "state_of_health_pct": 60.3,
+    "charge_cycles": 794,
+    "battery_temp_c": 26.1,
+    "voltage": 366.4,
+    "fast_charge_count": 194
+  },
+  {
+    "id": 65,
+    "vehicle_id": 35,
+    "state_of_charge_pct": 49.7,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 926,
+    "battery_temp_c": 23.3,
+    "voltage": 352.2,
+    "fast_charge_count": 144
+  },
+  {
+    "id": 66,
+    "vehicle_id": 17,
+    "state_of_charge_pct": 97.5,
+    "state_of_health_pct": 66.2,
+    "charge_cycles": 676,
+    "battery_temp_c": 23.8,
+    "voltage": 399.5,
+    "fast_charge_count": 23
+  },
+  {
+    "id": 67,
+    "vehicle_id": 32,
+    "state_of_charge_pct": 75.2,
+    "state_of_health_pct": 93.6,
+    "charge_cycles": 128,
+    "battery_temp_c": 31.3,
+    "voltage": 341.6,
+    "fast_charge_count": 92
+  },
+  {
+    "id": 68,
+    "vehicle_id": 32,
+    "state_of_charge_pct": 50.9,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 1017,
+    "battery_temp_c": 21.8,
+    "voltage": 375.7,
+    "fast_charge_count": 6
+  },
+  {
+    "id": 69,
+    "vehicle_id": 10,
+    "state_of_charge_pct": 62.0,
+    "state_of_health_pct": 95.5,
+    "charge_cycles": 89,
+    "battery_temp_c": 25.9,
+    "voltage": 348.2,
+    "fast_charge_count": 60
+  },
+  {
+    "id": 70,
+    "vehicle_id": 24,
+    "state_of_charge_pct": 53.2,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 988,
+    "battery_temp_c": 17.3,
+    "voltage": 405.2,
+    "fast_charge_count": 262
+  },
+  {
+    "id": 71,
+    "vehicle_id": 11,
+    "state_of_charge_pct": 80.5,
+    "state_of_health_pct": 83.2,
+    "charge_cycles": 337,
+    "battery_temp_c": 40.8,
+    "voltage": 346.9,
+    "fast_charge_count": 238
+  },
+  {
+    "id": 72,
+    "vehicle_id": 29,
+    "state_of_charge_pct": 19.5,
+    "state_of_health_pct": 78.0,
+    "charge_cycles": 441,
+    "battery_temp_c": 34.8,
+    "voltage": 325.4,
+    "fast_charge_count": 142
+  },
+  {
+    "id": 73,
+    "vehicle_id": 47,
+    "state_of_charge_pct": 72.2,
+    "state_of_health_pct": 64.8,
+    "charge_cycles": 704,
+    "battery_temp_c": 25.6,
+    "voltage": 400.8,
+    "fast_charge_count": 215
+  },
+  {
+    "id": 74,
+    "vehicle_id": 50,
+    "state_of_charge_pct": 32.2,
+    "state_of_health_pct": 95.2,
+    "charge_cycles": 95,
+    "battery_temp_c": 19.8,
+    "voltage": 371.8,
+    "fast_charge_count": 29
+  },
+  {
+    "id": 75,
+    "vehicle_id": 28,
+    "state_of_charge_pct": 94.9,
+    "state_of_health_pct": 88.9,
+    "charge_cycles": 222,
+    "battery_temp_c": 28.7,
+    "voltage": 323.2,
+    "fast_charge_count": 70
+  },
+  {
+    "id": 76,
+    "vehicle_id": 50,
+    "state_of_charge_pct": 9.8,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 1297,
+    "battery_temp_c": 23.1,
+    "voltage": 331.0,
+    "fast_charge_count": 287
+  },
+  {
+    "id": 77,
+    "vehicle_id": 4,
+    "state_of_charge_pct": 56.1,
+    "state_of_health_pct": 76.0,
+    "charge_cycles": 479,
+    "battery_temp_c": 33.0,
+    "voltage": 374.1,
+    "fast_charge_count": 68
+  },
+  {
+    "id": 78,
+    "vehicle_id": 49,
+    "state_of_charge_pct": 52.5,
+    "state_of_health_pct": 86.7,
+    "charge_cycles": 267,
+    "battery_temp_c": 38.1,
+    "voltage": 386.9,
+    "fast_charge_count": 110
+  },
+  {
+    "id": 79,
+    "vehicle_id": 11,
+    "state_of_charge_pct": 57.5,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 997,
+    "battery_temp_c": 16.3,
+    "voltage": 373.7,
+    "fast_charge_count": 190
+  },
+  {
+    "id": 80,
+    "vehicle_id": 34,
+    "state_of_charge_pct": 27.3,
+    "state_of_health_pct": 93.2,
+    "charge_cycles": 135,
+    "battery_temp_c": 34.7,
+    "voltage": 400.4,
+    "fast_charge_count": 155
+  },
+  {
+    "id": 81,
+    "vehicle_id": 18,
+    "state_of_charge_pct": 70.5,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 1094,
+    "battery_temp_c": 17.6,
+    "voltage": 379.2,
+    "fast_charge_count": 94
+  },
+  {
+    "id": 82,
+    "vehicle_id": 33,
+    "state_of_charge_pct": 62.9,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 1222,
+    "battery_temp_c": 33.9,
+    "voltage": 404.7,
+    "fast_charge_count": 289
+  },
+  {
+    "id": 83,
+    "vehicle_id": 15,
+    "state_of_charge_pct": 38.4,
+    "state_of_health_pct": 81.1,
+    "charge_cycles": 378,
+    "battery_temp_c": 30.8,
+    "voltage": 374.2,
+    "fast_charge_count": 256
+  },
+  {
+    "id": 84,
+    "vehicle_id": 28,
+    "state_of_charge_pct": 10.1,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 1093,
+    "battery_temp_c": 39.9,
+    "voltage": 355.2,
+    "fast_charge_count": 205
+  },
+  {
+    "id": 85,
+    "vehicle_id": 50,
+    "state_of_charge_pct": 80.9,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 1367,
+    "battery_temp_c": 25.9,
+    "voltage": 392.9,
+    "fast_charge_count": 287
+  },
+  {
+    "id": 86,
+    "vehicle_id": 20,
+    "state_of_charge_pct": 23.3,
+    "state_of_health_pct": 77.4,
+    "charge_cycles": 452,
+    "battery_temp_c": 18.7,
+    "voltage": 378.7,
+    "fast_charge_count": 283
+  },
+  {
+    "id": 87,
+    "vehicle_id": 1,
+    "state_of_charge_pct": 39.1,
+    "state_of_health_pct": 70.2,
+    "charge_cycles": 596,
+    "battery_temp_c": 41.8,
+    "voltage": 397.3,
+    "fast_charge_count": 183
+  },
+  {
+    "id": 88,
+    "vehicle_id": 35,
+    "state_of_charge_pct": 55.9,
+    "state_of_health_pct": 92.7,
+    "charge_cycles": 147,
+    "battery_temp_c": 16.2,
+    "voltage": 338.6,
+    "fast_charge_count": 246
+  },
+  {
+    "id": 89,
+    "vehicle_id": 28,
+    "state_of_charge_pct": 87.1,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 1096,
+    "battery_temp_c": 20.7,
+    "voltage": 359.7,
+    "fast_charge_count": 210
+  },
+  {
+    "id": 90,
+    "vehicle_id": 20,
+    "state_of_charge_pct": 76.9,
+    "state_of_health_pct": 63.4,
+    "charge_cycles": 732,
+    "battery_temp_c": 24.9,
+    "voltage": 368.3,
+    "fast_charge_count": 226
+  },
+  {
+    "id": 91,
+    "vehicle_id": 10,
+    "state_of_charge_pct": 93.7,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 932,
+    "battery_temp_c": 38.0,
+    "voltage": 409.3,
+    "fast_charge_count": 122
+  },
+  {
+    "id": 92,
+    "vehicle_id": 15,
+    "state_of_charge_pct": 54.2,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 1455,
+    "battery_temp_c": 31.6,
+    "voltage": 327.8,
+    "fast_charge_count": 45
+  },
+  {
+    "id": 93,
+    "vehicle_id": 41,
+    "state_of_charge_pct": 44.9,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 1159,
+    "battery_temp_c": 16.2,
+    "voltage": 406.3,
+    "fast_charge_count": 160
+  },
+  {
+    "id": 94,
+    "vehicle_id": 35,
+    "state_of_charge_pct": 22.0,
+    "state_of_health_pct": 75.4,
+    "charge_cycles": 492,
+    "battery_temp_c": 34.6,
+    "voltage": 405.7,
+    "fast_charge_count": 106
+  },
+  {
+    "id": 95,
+    "vehicle_id": 26,
+    "state_of_charge_pct": 21.5,
+    "state_of_health_pct": 71.8,
+    "charge_cycles": 565,
+    "battery_temp_c": 30.1,
+    "voltage": 362.1,
+    "fast_charge_count": 283
+  },
+  {
+    "id": 96,
+    "vehicle_id": 37,
+    "state_of_charge_pct": 22.5,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 1434,
+    "battery_temp_c": 20.2,
+    "voltage": 360.4,
+    "fast_charge_count": 265
+  },
+  {
+    "id": 97,
+    "vehicle_id": 41,
+    "state_of_charge_pct": 65.0,
+    "state_of_health_pct": 78.0,
+    "charge_cycles": 440,
+    "battery_temp_c": 42.0,
+    "voltage": 375.2,
+    "fast_charge_count": 63
+  },
+  {
+    "id": 98,
+    "vehicle_id": 40,
+    "state_of_charge_pct": 72.2,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 1094,
+    "battery_temp_c": 27.3,
+    "voltage": 351.4,
+    "fast_charge_count": 282
+  },
+  {
+    "id": 99,
+    "vehicle_id": 48,
+    "state_of_charge_pct": 6.6,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 1428,
+    "battery_temp_c": 42.8,
+    "voltage": 352.2,
+    "fast_charge_count": 228
+  },
+  {
+    "id": 100,
+    "vehicle_id": 10,
+    "state_of_charge_pct": 99.5,
+    "state_of_health_pct": 70.0,
+    "charge_cycles": 601,
+    "battery_temp_c": 21.2,
+    "voltage": 378.1,
+    "fast_charge_count": 72
+  },
+  {
+    "id": 101,
+    "vehicle_id": 33,
+    "state_of_charge_pct": 90.4,
+    "state_of_health_pct": 64.6,
+    "charge_cycles": 708,
+    "battery_temp_c": 22.8,
+    "voltage": 328.0,
+    "fast_charge_count": 220
+  },
+  {
+    "id": 102,
+    "vehicle_id": 6,
+    "state_of_charge_pct": 6.5,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 818,
+    "battery_temp_c": 31.3,
+    "voltage": 388.9,
+    "fast_charge_count": 120
+  },
+  {
+    "id": 103,
+    "vehicle_id": 11,
+    "state_of_charge_pct": 93.6,
+    "state_of_health_pct": 62.8,
+    "charge_cycles": 744,
+    "battery_temp_c": 18.9,
+    "voltage": 350.0,
+    "fast_charge_count": 109
+  },
+  {
+    "id": 104,
+    "vehicle_id": 44,
+    "state_of_charge_pct": 86.7,
+    "state_of_health_pct": 74.9,
+    "charge_cycles": 502,
+    "battery_temp_c": 41.7,
+    "voltage": 373.7,
+    "fast_charge_count": 211
+  },
+  {
+    "id": 105,
+    "vehicle_id": 15,
+    "state_of_charge_pct": 23.2,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 1289,
+    "battery_temp_c": 24.3,
+    "voltage": 347.6,
+    "fast_charge_count": 229
+  },
+  {
+    "id": 106,
+    "vehicle_id": 6,
+    "state_of_charge_pct": 18.6,
+    "state_of_health_pct": 93.0,
+    "charge_cycles": 141,
+    "battery_temp_c": 23.3,
+    "voltage": 362.3,
+    "fast_charge_count": 92
+  },
+  {
+    "id": 107,
+    "vehicle_id": 46,
+    "state_of_charge_pct": 80.6,
+    "state_of_health_pct": 95.9,
+    "charge_cycles": 83,
+    "battery_temp_c": 42.6,
+    "voltage": 374.8,
+    "fast_charge_count": 154
+  },
+  {
+    "id": 108,
+    "vehicle_id": 22,
+    "state_of_charge_pct": 92.9,
+    "state_of_health_pct": 64.4,
+    "charge_cycles": 712,
+    "battery_temp_c": 25.9,
+    "voltage": 371.4,
+    "fast_charge_count": 220
+  },
+  {
+    "id": 109,
+    "vehicle_id": 46,
+    "state_of_charge_pct": 12.7,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 1347,
+    "battery_temp_c": 37.0,
+    "voltage": 370.1,
+    "fast_charge_count": 196
+  },
+  {
+    "id": 110,
+    "vehicle_id": 12,
+    "state_of_charge_pct": 71.6,
+    "state_of_health_pct": 71.8,
+    "charge_cycles": 565,
+    "battery_temp_c": 39.3,
+    "voltage": 377.9,
+    "fast_charge_count": 17
+  },
+  {
+    "id": 111,
+    "vehicle_id": 29,
+    "state_of_charge_pct": 59.1,
+    "state_of_health_pct": 60.9,
+    "charge_cycles": 782,
+    "battery_temp_c": 16.1,
+    "voltage": 359.5,
+    "fast_charge_count": 189
+  },
+  {
+    "id": 112,
+    "vehicle_id": 11,
+    "state_of_charge_pct": 85.7,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 833,
+    "battery_temp_c": 41.1,
+    "voltage": 372.5,
+    "fast_charge_count": 76
+  },
+  {
+    "id": 113,
+    "vehicle_id": 29,
+    "state_of_charge_pct": 75.6,
+    "state_of_health_pct": 73.2,
+    "charge_cycles": 536,
+    "battery_temp_c": 18.5,
+    "voltage": 323.6,
+    "fast_charge_count": 187
+  },
+  {
+    "id": 114,
+    "vehicle_id": 18,
+    "state_of_charge_pct": 24.4,
+    "state_of_health_pct": 69.5,
+    "charge_cycles": 609,
+    "battery_temp_c": 20.2,
+    "voltage": 390.0,
+    "fast_charge_count": 195
+  },
+  {
+    "id": 115,
+    "vehicle_id": 17,
+    "state_of_charge_pct": 58.6,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 1415,
+    "battery_temp_c": 42.5,
+    "voltage": 383.1,
+    "fast_charge_count": 241
+  },
+  {
+    "id": 116,
+    "vehicle_id": 20,
+    "state_of_charge_pct": 68.8,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 815,
+    "battery_temp_c": 44.7,
+    "voltage": 339.8,
+    "fast_charge_count": 19
+  },
+  {
+    "id": 117,
+    "vehicle_id": 12,
+    "state_of_charge_pct": 77.1,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 947,
+    "battery_temp_c": 16.8,
+    "voltage": 392.5,
+    "fast_charge_count": 74
+  },
+  {
+    "id": 118,
+    "vehicle_id": 37,
+    "state_of_charge_pct": 80.6,
+    "state_of_health_pct": 70.3,
+    "charge_cycles": 594,
+    "battery_temp_c": 28.7,
+    "voltage": 397.2,
+    "fast_charge_count": 63
+  },
+  {
+    "id": 119,
+    "vehicle_id": 6,
+    "state_of_charge_pct": 28.4,
+    "state_of_health_pct": 60.0,
+    "charge_cycles": 936,
+    "battery_temp_c": 29.0,
+    "voltage": 397.4,
+    "fast_charge_count": 174
+  },
+  {
+    "id": 120,
+    "vehicle_id": 12,
+    "state_of_charge_pct": 30.4,
+    "state_of_health_pct": 98.5,
+    "charge_cycles": 31,
+    "battery_temp_c": 24.0,
+    "voltage": 322.0,
+    "fast_charge_count": 181
+  }
+]

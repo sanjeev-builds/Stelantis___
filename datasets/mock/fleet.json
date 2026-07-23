@@ -1,0 +1,1202 @@
+[
+  {
+    "id": 1,
+    "vehicle_id": 1,
+    "driver_id": 173,
+    "status": "maintenance",
+    "latitude": 45.50885,
+    "longitude": 13.69501,
+    "daily_distance_km": 261.0,
+    "idle_time_minutes": 207
+  },
+  {
+    "id": 2,
+    "vehicle_id": 2,
+    "driver_id": 147,
+    "status": "active",
+    "latitude": 43.66804,
+    "longitude": 10.28456,
+    "daily_distance_km": 326.5,
+    "idle_time_minutes": 1
+  },
+  {
+    "id": 3,
+    "vehicle_id": 3,
+    "driver_id": 190,
+    "status": "maintenance",
+    "latitude": 48.456,
+    "longitude": 6.08458,
+    "daily_distance_km": 52.1,
+    "idle_time_minutes": 56
+  },
+  {
+    "id": 4,
+    "vehicle_id": 4,
+    "driver_id": 194,
+    "status": "active",
+    "latitude": 41.27178,
+    "longitude": 11.76938,
+    "daily_distance_km": 338.7,
+    "idle_time_minutes": 108
+  },
+  {
+    "id": 5,
+    "vehicle_id": 5,
+    "driver_id": 138,
+    "status": "idle",
+    "latitude": 47.66376,
+    "longitude": 17.11673,
+    "daily_distance_km": 123.4,
+    "idle_time_minutes": 218
+  },
+  {
+    "id": 6,
+    "vehicle_id": 6,
+    "driver_id": 127,
+    "status": "maintenance",
+    "latitude": 48.59572,
+    "longitude": 3.47609,
+    "daily_distance_km": 411.9,
+    "idle_time_minutes": 86
+  },
+  {
+    "id": 7,
+    "vehicle_id": 7,
+    "driver_id": 168,
+    "status": "maintenance",
+    "latitude": 47.02632,
+    "longitude": 18.58729,
+    "daily_distance_km": 29.1,
+    "idle_time_minutes": 106
+  },
+  {
+    "id": 8,
+    "vehicle_id": 8,
+    "driver_id": 198,
+    "status": "active",
+    "latitude": 47.24451,
+    "longitude": -0.4249,
+    "daily_distance_km": 16.4,
+    "idle_time_minutes": 42
+  },
+  {
+    "id": 9,
+    "vehicle_id": 9,
+    "driver_id": 113,
+    "status": "maintenance",
+    "latitude": 45.3337,
+    "longitude": 12.61216,
+    "daily_distance_km": 378.3,
+    "idle_time_minutes": 172
+  },
+  {
+    "id": 10,
+    "vehicle_id": 10,
+    "driver_id": 184,
+    "status": "offline",
+    "latitude": 44.53676,
+    "longitude": -5.46337,
+    "daily_distance_km": 336.8,
+    "idle_time_minutes": 208
+  },
+  {
+    "id": 11,
+    "vehicle_id": 11,
+    "driver_id": 106,
+    "status": "maintenance",
+    "latitude": 41.65617,
+    "longitude": -7.57017,
+    "daily_distance_km": 78.9,
+    "idle_time_minutes": 175
+  },
+  {
+    "id": 12,
+    "vehicle_id": 12,
+    "driver_id": 183,
+    "status": "offline",
+    "latitude": 48.77413,
+    "longitude": -5.93478,
+    "daily_distance_km": 39.2,
+    "idle_time_minutes": 106
+  },
+  {
+    "id": 13,
+    "vehicle_id": 13,
+    "driver_id": 112,
+    "status": "active",
+    "latitude": 44.584,
+    "longitude": -3.26472,
+    "daily_distance_km": 41.6,
+    "idle_time_minutes": 131
+  },
+  {
+    "id": 14,
+    "vehicle_id": 14,
+    "driver_id": 146,
+    "status": "idle",
+    "latitude": 47.33473,
+    "longitude": 8.6032,
+    "daily_distance_km": 219.0,
+    "idle_time_minutes": 143
+  },
+  {
+    "id": 15,
+    "vehicle_id": 15,
+    "driver_id": 135,
+    "status": "active",
+    "latitude": 45.49399,
+    "longitude": -2.7921,
+    "daily_distance_km": 175.2,
+    "idle_time_minutes": 202
+  },
+  {
+    "id": 16,
+    "vehicle_id": 16,
+    "driver_id": 150,
+    "status": "idle",
+    "latitude": 41.15646,
+    "longitude": 6.44063,
+    "daily_distance_km": 337.3,
+    "idle_time_minutes": 209
+  },
+  {
+    "id": 17,
+    "vehicle_id": 17,
+    "driver_id": 174,
+    "status": "idle",
+    "latitude": 48.0773,
+    "longitude": 19.72129,
+    "daily_distance_km": 289.6,
+    "idle_time_minutes": 69
+  },
+  {
+    "id": 18,
+    "vehicle_id": 18,
+    "driver_id": 163,
+    "status": "idle",
+    "latitude": 41.23152,
+    "longitude": 17.05725,
+    "daily_distance_km": 228.0,
+    "idle_time_minutes": 68
+  },
+  {
+    "id": 19,
+    "vehicle_id": 19,
+    "driver_id": 136,
+    "status": "offline",
+    "latitude": 42.28282,
+    "longitude": 14.10596,
+    "daily_distance_km": 136.2,
+    "idle_time_minutes": 133
+  },
+  {
+    "id": 20,
+    "vehicle_id": 20,
+    "driver_id": 151,
+    "status": "idle",
+    "latitude": 41.39249,
+    "longitude": 15.94075,
+    "daily_distance_km": 188.0,
+    "idle_time_minutes": 78
+  },
+  {
+    "id": 21,
+    "vehicle_id": 21,
+    "driver_id": 130,
+    "status": "maintenance",
+    "latitude": 41.85713,
+    "longitude": 1.14408,
+    "daily_distance_km": 56.2,
+    "idle_time_minutes": 175
+  },
+  {
+    "id": 22,
+    "vehicle_id": 22,
+    "driver_id": 118,
+    "status": "offline",
+    "latitude": 41.6501,
+    "longitude": 1.35516,
+    "daily_distance_km": 441.9,
+    "idle_time_minutes": 77
+  },
+  {
+    "id": 23,
+    "vehicle_id": 23,
+    "driver_id": 137,
+    "status": "offline",
+    "latitude": 41.81684,
+    "longitude": 4.6371,
+    "daily_distance_km": 44.6,
+    "idle_time_minutes": 149
+  },
+  {
+    "id": 24,
+    "vehicle_id": 24,
+    "driver_id": 183,
+    "status": "idle",
+    "latitude": 48.67345,
+    "longitude": 18.98686,
+    "daily_distance_km": 73.1,
+    "idle_time_minutes": 168
+  },
+  {
+    "id": 25,
+    "vehicle_id": 25,
+    "driver_id": 159,
+    "status": "offline",
+    "latitude": 48.00509,
+    "longitude": 0.81958,
+    "daily_distance_km": 175.0,
+    "idle_time_minutes": 194
+  },
+  {
+    "id": 26,
+    "vehicle_id": 26,
+    "driver_id": 106,
+    "status": "idle",
+    "latitude": 44.29339,
+    "longitude": -0.47338,
+    "daily_distance_km": 2.6,
+    "idle_time_minutes": 188
+  },
+  {
+    "id": 27,
+    "vehicle_id": 27,
+    "driver_id": 165,
+    "status": "offline",
+    "latitude": 46.65896,
+    "longitude": 17.64966,
+    "daily_distance_km": 263.2,
+    "idle_time_minutes": 96
+  },
+  {
+    "id": 28,
+    "vehicle_id": 28,
+    "driver_id": 163,
+    "status": "active",
+    "latitude": 45.50386,
+    "longitude": -2.18872,
+    "daily_distance_km": 201.5,
+    "idle_time_minutes": 220
+  },
+  {
+    "id": 29,
+    "vehicle_id": 29,
+    "driver_id": 128,
+    "status": "idle",
+    "latitude": 42.20744,
+    "longitude": 4.03387,
+    "daily_distance_km": 382.9,
+    "idle_time_minutes": 158
+  },
+  {
+    "id": 30,
+    "vehicle_id": 30,
+    "driver_id": 119,
+    "status": "maintenance",
+    "latitude": 47.48784,
+    "longitude": -0.75564,
+    "daily_distance_km": 247.5,
+    "idle_time_minutes": 184
+  },
+  {
+    "id": 31,
+    "vehicle_id": 31,
+    "driver_id": 157,
+    "status": "offline",
+    "latitude": 46.25384,
+    "longitude": 9.16347,
+    "daily_distance_km": 251.1,
+    "idle_time_minutes": 42
+  },
+  {
+    "id": 32,
+    "vehicle_id": 32,
+    "driver_id": 179,
+    "status": "active",
+    "latitude": 47.97153,
+    "longitude": -3.68966,
+    "daily_distance_km": 267.9,
+    "idle_time_minutes": 7
+  },
+  {
+    "id": 33,
+    "vehicle_id": 33,
+    "driver_id": 144,
+    "status": "idle",
+    "latitude": 47.82522,
+    "longitude": 15.57879,
+    "daily_distance_km": 347.3,
+    "idle_time_minutes": 91
+  },
+  {
+    "id": 34,
+    "vehicle_id": 34,
+    "driver_id": 176,
+    "status": "active",
+    "latitude": 48.92361,
+    "longitude": 11.96203,
+    "daily_distance_km": 51.7,
+    "idle_time_minutes": 205
+  },
+  {
+    "id": 35,
+    "vehicle_id": 35,
+    "driver_id": 120,
+    "status": "active",
+    "latitude": 43.39039,
+    "longitude": -7.44491,
+    "daily_distance_km": 231.7,
+    "idle_time_minutes": 202
+  },
+  {
+    "id": 36,
+    "vehicle_id": 36,
+    "driver_id": 175,
+    "status": "active",
+    "latitude": 41.9599,
+    "longitude": 8.4613,
+    "daily_distance_km": 149.5,
+    "idle_time_minutes": 146
+  },
+  {
+    "id": 37,
+    "vehicle_id": 37,
+    "driver_id": 181,
+    "status": "maintenance",
+    "latitude": 44.33514,
+    "longitude": 1.7913,
+    "daily_distance_km": 222.7,
+    "idle_time_minutes": 61
+  },
+  {
+    "id": 38,
+    "vehicle_id": 38,
+    "driver_id": 192,
+    "status": "offline",
+    "latitude": 45.29464,
+    "longitude": 11.99133,
+    "daily_distance_km": 77.7,
+    "idle_time_minutes": 234
+  },
+  {
+    "id": 39,
+    "vehicle_id": 39,
+    "driver_id": 104,
+    "status": "idle",
+    "latitude": 44.33266,
+    "longitude": -5.04258,
+    "daily_distance_km": 119.8,
+    "idle_time_minutes": 227
+  },
+  {
+    "id": 40,
+    "vehicle_id": 40,
+    "driver_id": 135,
+    "status": "maintenance",
+    "latitude": 47.42139,
+    "longitude": 7.00581,
+    "daily_distance_km": 207.4,
+    "idle_time_minutes": 216
+  },
+  {
+    "id": 41,
+    "vehicle_id": 41,
+    "driver_id": 167,
+    "status": "idle",
+    "latitude": 42.37123,
+    "longitude": -6.63815,
+    "daily_distance_km": 225.3,
+    "idle_time_minutes": 232
+  },
+  {
+    "id": 42,
+    "vehicle_id": 42,
+    "driver_id": 111,
+    "status": "maintenance",
+    "latitude": 42.61299,
+    "longitude": 3.4727,
+    "daily_distance_km": 252.0,
+    "idle_time_minutes": 160
+  },
+  {
+    "id": 43,
+    "vehicle_id": 43,
+    "driver_id": 178,
+    "status": "maintenance",
+    "latitude": 45.76231,
+    "longitude": 19.79659,
+    "daily_distance_km": 160.0,
+    "idle_time_minutes": 50
+  },
+  {
+    "id": 44,
+    "vehicle_id": 44,
+    "driver_id": 159,
+    "status": "active",
+    "latitude": 45.85942,
+    "longitude": 13.95026,
+    "daily_distance_km": 241.4,
+    "idle_time_minutes": 59
+  },
+  {
+    "id": 45,
+    "vehicle_id": 45,
+    "driver_id": 165,
+    "status": "idle",
+    "latitude": 47.46848,
+    "longitude": 3.56793,
+    "daily_distance_km": 432.1,
+    "idle_time_minutes": 147
+  },
+  {
+    "id": 46,
+    "vehicle_id": 46,
+    "driver_id": 141,
+    "status": "active",
+    "latitude": 46.74164,
+    "longitude": 12.16458,
+    "daily_distance_km": 147.1,
+    "idle_time_minutes": 139
+  },
+  {
+    "id": 47,
+    "vehicle_id": 47,
+    "driver_id": 125,
+    "status": "active",
+    "latitude": 41.15901,
+    "longitude": 11.16181,
+    "daily_distance_km": 16.1,
+    "idle_time_minutes": 14
+  },
+  {
+    "id": 48,
+    "vehicle_id": 48,
+    "driver_id": 107,
+    "status": "offline",
+    "latitude": 46.90176,
+    "longitude": 12.18981,
+    "daily_distance_km": 152.6,
+    "idle_time_minutes": 183
+  },
+  {
+    "id": 49,
+    "vehicle_id": 49,
+    "driver_id": 196,
+    "status": "offline",
+    "latitude": 48.32193,
+    "longitude": 10.547,
+    "daily_distance_km": 281.1,
+    "idle_time_minutes": 130
+  },
+  {
+    "id": 50,
+    "vehicle_id": 50,
+    "driver_id": 127,
+    "status": "active",
+    "latitude": 45.09244,
+    "longitude": 6.72412,
+    "daily_distance_km": 334.9,
+    "idle_time_minutes": 26
+  },
+  {
+    "id": 51,
+    "vehicle_id": 51,
+    "driver_id": 111,
+    "status": "idle",
+    "latitude": 44.20161,
+    "longitude": 12.52838,
+    "daily_distance_km": 9.0,
+    "idle_time_minutes": 103
+  },
+  {
+    "id": 52,
+    "vehicle_id": 52,
+    "driver_id": 173,
+    "status": "idle",
+    "latitude": 44.77139,
+    "longitude": -4.17595,
+    "daily_distance_km": 293.3,
+    "idle_time_minutes": 190
+  },
+  {
+    "id": 53,
+    "vehicle_id": 53,
+    "driver_id": 136,
+    "status": "active",
+    "latitude": 47.24513,
+    "longitude": 17.02922,
+    "daily_distance_km": 424.5,
+    "idle_time_minutes": 10
+  },
+  {
+    "id": 54,
+    "vehicle_id": 54,
+    "driver_id": 147,
+    "status": "maintenance",
+    "latitude": 45.86399,
+    "longitude": -4.57043,
+    "daily_distance_km": 96.0,
+    "idle_time_minutes": 102
+  },
+  {
+    "id": 55,
+    "vehicle_id": 55,
+    "driver_id": 150,
+    "status": "active",
+    "latitude": 43.43677,
+    "longitude": 15.32936,
+    "daily_distance_km": 364.3,
+    "idle_time_minutes": 1
+  },
+  {
+    "id": 56,
+    "vehicle_id": 56,
+    "driver_id": 143,
+    "status": "idle",
+    "latitude": 46.45049,
+    "longitude": 18.2621,
+    "daily_distance_km": 281.0,
+    "idle_time_minutes": 47
+  },
+  {
+    "id": 57,
+    "vehicle_id": 57,
+    "driver_id": 123,
+    "status": "idle",
+    "latitude": 45.8555,
+    "longitude": 11.67061,
+    "daily_distance_km": 355.9,
+    "idle_time_minutes": 103
+  },
+  {
+    "id": 58,
+    "vehicle_id": 58,
+    "driver_id": 181,
+    "status": "maintenance",
+    "latitude": 44.42096,
+    "longitude": 5.69258,
+    "daily_distance_km": 339.9,
+    "idle_time_minutes": 56
+  },
+  {
+    "id": 59,
+    "vehicle_id": 59,
+    "driver_id": 192,
+    "status": "active",
+    "latitude": 44.19087,
+    "longitude": 16.36992,
+    "daily_distance_km": 30.9,
+    "idle_time_minutes": 75
+  },
+  {
+    "id": 60,
+    "vehicle_id": 60,
+    "driver_id": 110,
+    "status": "offline",
+    "latitude": 44.24699,
+    "longitude": 10.71732,
+    "daily_distance_km": 49.0,
+    "idle_time_minutes": 230
+  },
+  {
+    "id": 61,
+    "vehicle_id": 61,
+    "driver_id": 135,
+    "status": "active",
+    "latitude": 44.80373,
+    "longitude": 14.22774,
+    "daily_distance_km": 5.3,
+    "idle_time_minutes": 39
+  },
+  {
+    "id": 62,
+    "vehicle_id": 62,
+    "driver_id": 158,
+    "status": "offline",
+    "latitude": 44.61512,
+    "longitude": -0.63671,
+    "daily_distance_km": 67.1,
+    "idle_time_minutes": 138
+  },
+  {
+    "id": 63,
+    "vehicle_id": 63,
+    "driver_id": 135,
+    "status": "active",
+    "latitude": 45.50104,
+    "longitude": 16.7093,
+    "daily_distance_km": 93.9,
+    "idle_time_minutes": 211
+  },
+  {
+    "id": 64,
+    "vehicle_id": 64,
+    "driver_id": 127,
+    "status": "maintenance",
+    "latitude": 44.30969,
+    "longitude": -4.46456,
+    "daily_distance_km": 226.6,
+    "idle_time_minutes": 105
+  },
+  {
+    "id": 65,
+    "vehicle_id": 65,
+    "driver_id": 106,
+    "status": "idle",
+    "latitude": 43.67483,
+    "longitude": -2.44551,
+    "daily_distance_km": 251.3,
+    "idle_time_minutes": 43
+  },
+  {
+    "id": 66,
+    "vehicle_id": 66,
+    "driver_id": 150,
+    "status": "idle",
+    "latitude": 46.543,
+    "longitude": 3.96137,
+    "daily_distance_km": 29.7,
+    "idle_time_minutes": 32
+  },
+  {
+    "id": 67,
+    "vehicle_id": 67,
+    "driver_id": 189,
+    "status": "maintenance",
+    "latitude": 45.65035,
+    "longitude": 7.85438,
+    "daily_distance_km": 32.9,
+    "idle_time_minutes": 22
+  },
+  {
+    "id": 68,
+    "vehicle_id": 68,
+    "driver_id": 171,
+    "status": "active",
+    "latitude": 45.1525,
+    "longitude": 14.52731,
+    "daily_distance_km": 157.1,
+    "idle_time_minutes": 229
+  },
+  {
+    "id": 69,
+    "vehicle_id": 69,
+    "driver_id": 118,
+    "status": "offline",
+    "latitude": 44.00189,
+    "longitude": -0.91875,
+    "daily_distance_km": 138.0,
+    "idle_time_minutes": 19
+  },
+  {
+    "id": 70,
+    "vehicle_id": 70,
+    "driver_id": 107,
+    "status": "idle",
+    "latitude": 42.50684,
+    "longitude": -0.71703,
+    "daily_distance_km": 145.2,
+    "idle_time_minutes": 157
+  },
+  {
+    "id": 71,
+    "vehicle_id": 71,
+    "driver_id": 195,
+    "status": "offline",
+    "latitude": 43.57271,
+    "longitude": 4.48449,
+    "daily_distance_km": 171.3,
+    "idle_time_minutes": 37
+  },
+  {
+    "id": 72,
+    "vehicle_id": 72,
+    "driver_id": 129,
+    "status": "offline",
+    "latitude": 44.82986,
+    "longitude": -7.48257,
+    "daily_distance_km": 75.3,
+    "idle_time_minutes": 81
+  },
+  {
+    "id": 73,
+    "vehicle_id": 73,
+    "driver_id": 150,
+    "status": "idle",
+    "latitude": 44.16888,
+    "longitude": -7.56802,
+    "daily_distance_km": 105.3,
+    "idle_time_minutes": 18
+  },
+  {
+    "id": 74,
+    "vehicle_id": 74,
+    "driver_id": 132,
+    "status": "active",
+    "latitude": 45.26892,
+    "longitude": 10.57105,
+    "daily_distance_km": 226.1,
+    "idle_time_minutes": 135
+  },
+  {
+    "id": 75,
+    "vehicle_id": 75,
+    "driver_id": 137,
+    "status": "maintenance",
+    "latitude": 47.49906,
+    "longitude": 12.86589,
+    "daily_distance_km": 120.4,
+    "idle_time_minutes": 66
+  },
+  {
+    "id": 76,
+    "vehicle_id": 76,
+    "driver_id": 183,
+    "status": "active",
+    "latitude": 48.02445,
+    "longitude": -0.01161,
+    "daily_distance_km": 362.9,
+    "idle_time_minutes": 1
+  },
+  {
+    "id": 77,
+    "vehicle_id": 77,
+    "driver_id": 188,
+    "status": "offline",
+    "latitude": 43.9115,
+    "longitude": 18.04631,
+    "daily_distance_km": 33.6,
+    "idle_time_minutes": 163
+  },
+  {
+    "id": 78,
+    "vehicle_id": 78,
+    "driver_id": 197,
+    "status": "maintenance",
+    "latitude": 43.68737,
+    "longitude": 5.73944,
+    "daily_distance_km": 65.1,
+    "idle_time_minutes": 195
+  },
+  {
+    "id": 79,
+    "vehicle_id": 79,
+    "driver_id": 132,
+    "status": "maintenance",
+    "latitude": 48.16769,
+    "longitude": 15.47157,
+    "daily_distance_km": 285.1,
+    "idle_time_minutes": 180
+  },
+  {
+    "id": 80,
+    "vehicle_id": 80,
+    "driver_id": 103,
+    "status": "maintenance",
+    "latitude": 48.93052,
+    "longitude": 16.45854,
+    "daily_distance_km": 193.6,
+    "idle_time_minutes": 215
+  },
+  {
+    "id": 81,
+    "vehicle_id": 81,
+    "driver_id": 184,
+    "status": "offline",
+    "latitude": 41.35861,
+    "longitude": 5.06759,
+    "daily_distance_km": 436.2,
+    "idle_time_minutes": 232
+  },
+  {
+    "id": 82,
+    "vehicle_id": 82,
+    "driver_id": 145,
+    "status": "offline",
+    "latitude": 46.04207,
+    "longitude": -1.14595,
+    "daily_distance_km": 380.0,
+    "idle_time_minutes": 229
+  },
+  {
+    "id": 83,
+    "vehicle_id": 83,
+    "driver_id": 160,
+    "status": "offline",
+    "latitude": 43.4936,
+    "longitude": 6.54542,
+    "daily_distance_km": 393.3,
+    "idle_time_minutes": 148
+  },
+  {
+    "id": 84,
+    "vehicle_id": 84,
+    "driver_id": 196,
+    "status": "offline",
+    "latitude": 42.78267,
+    "longitude": -6.60907,
+    "daily_distance_km": 8.0,
+    "idle_time_minutes": 124
+  },
+  {
+    "id": 85,
+    "vehicle_id": 85,
+    "driver_id": 139,
+    "status": "offline",
+    "latitude": 45.80178,
+    "longitude": -1.90078,
+    "daily_distance_km": 177.5,
+    "idle_time_minutes": 240
+  },
+  {
+    "id": 86,
+    "vehicle_id": 86,
+    "driver_id": 162,
+    "status": "idle",
+    "latitude": 47.61959,
+    "longitude": -3.53061,
+    "daily_distance_km": 184.6,
+    "idle_time_minutes": 189
+  },
+  {
+    "id": 87,
+    "vehicle_id": 87,
+    "driver_id": 169,
+    "status": "offline",
+    "latitude": 41.75981,
+    "longitude": 1.80371,
+    "daily_distance_km": 350.8,
+    "idle_time_minutes": 229
+  },
+  {
+    "id": 88,
+    "vehicle_id": 88,
+    "driver_id": 195,
+    "status": "maintenance",
+    "latitude": 47.55512,
+    "longitude": 17.79562,
+    "daily_distance_km": 252.0,
+    "idle_time_minutes": 92
+  },
+  {
+    "id": 89,
+    "vehicle_id": 89,
+    "driver_id": 101,
+    "status": "active",
+    "latitude": 45.06906,
+    "longitude": -3.49853,
+    "daily_distance_km": 310.4,
+    "idle_time_minutes": 73
+  },
+  {
+    "id": 90,
+    "vehicle_id": 90,
+    "driver_id": 117,
+    "status": "offline",
+    "latitude": 48.8301,
+    "longitude": 2.67222,
+    "daily_distance_km": 127.8,
+    "idle_time_minutes": 201
+  },
+  {
+    "id": 91,
+    "vehicle_id": 91,
+    "driver_id": 150,
+    "status": "active",
+    "latitude": 43.18738,
+    "longitude": 16.93183,
+    "daily_distance_km": 251.1,
+    "idle_time_minutes": 11
+  },
+  {
+    "id": 92,
+    "vehicle_id": 92,
+    "driver_id": 169,
+    "status": "maintenance",
+    "latitude": 41.72069,
+    "longitude": -3.53726,
+    "daily_distance_km": 148.9,
+    "idle_time_minutes": 9
+  },
+  {
+    "id": 93,
+    "vehicle_id": 93,
+    "driver_id": 128,
+    "status": "offline",
+    "latitude": 46.61444,
+    "longitude": -3.24499,
+    "daily_distance_km": 203.3,
+    "idle_time_minutes": 229
+  },
+  {
+    "id": 94,
+    "vehicle_id": 94,
+    "driver_id": 140,
+    "status": "offline",
+    "latitude": 42.84165,
+    "longitude": -7.27006,
+    "daily_distance_km": 96.7,
+    "idle_time_minutes": 215
+  },
+  {
+    "id": 95,
+    "vehicle_id": 95,
+    "driver_id": 174,
+    "status": "active",
+    "latitude": 42.36263,
+    "longitude": 14.21329,
+    "daily_distance_km": 131.5,
+    "idle_time_minutes": 98
+  },
+  {
+    "id": 96,
+    "vehicle_id": 96,
+    "driver_id": 182,
+    "status": "offline",
+    "latitude": 46.3246,
+    "longitude": 12.31283,
+    "daily_distance_km": 194.7,
+    "idle_time_minutes": 18
+  },
+  {
+    "id": 97,
+    "vehicle_id": 97,
+    "driver_id": 153,
+    "status": "active",
+    "latitude": 43.26909,
+    "longitude": 12.70615,
+    "daily_distance_km": 316.9,
+    "idle_time_minutes": 198
+  },
+  {
+    "id": 98,
+    "vehicle_id": 98,
+    "driver_id": 179,
+    "status": "idle",
+    "latitude": 41.73708,
+    "longitude": 4.14644,
+    "daily_distance_km": 141.4,
+    "idle_time_minutes": 145
+  },
+  {
+    "id": 99,
+    "vehicle_id": 99,
+    "driver_id": 158,
+    "status": "idle",
+    "latitude": 47.66822,
+    "longitude": 6.75495,
+    "daily_distance_km": 367.3,
+    "idle_time_minutes": 152
+  },
+  {
+    "id": 100,
+    "vehicle_id": 100,
+    "driver_id": 158,
+    "status": "idle",
+    "latitude": 45.32965,
+    "longitude": 19.63686,
+    "daily_distance_km": 261.8,
+    "idle_time_minutes": 228
+  },
+  {
+    "id": 101,
+    "vehicle_id": 101,
+    "driver_id": 103,
+    "status": "active",
+    "latitude": 48.10026,
+    "longitude": 0.98728,
+    "daily_distance_km": 94.3,
+    "idle_time_minutes": 11
+  },
+  {
+    "id": 102,
+    "vehicle_id": 102,
+    "driver_id": 121,
+    "status": "idle",
+    "latitude": 47.01467,
+    "longitude": 17.3594,
+    "daily_distance_km": 411.5,
+    "idle_time_minutes": 239
+  },
+  {
+    "id": 103,
+    "vehicle_id": 103,
+    "driver_id": 141,
+    "status": "offline",
+    "latitude": 43.28634,
+    "longitude": 1.28609,
+    "daily_distance_km": 301.7,
+    "idle_time_minutes": 188
+  },
+  {
+    "id": 104,
+    "vehicle_id": 104,
+    "driver_id": 160,
+    "status": "active",
+    "latitude": 48.11771,
+    "longitude": 19.87762,
+    "daily_distance_km": 189.6,
+    "idle_time_minutes": 91
+  },
+  {
+    "id": 105,
+    "vehicle_id": 105,
+    "driver_id": 187,
+    "status": "offline",
+    "latitude": 46.86576,
+    "longitude": 9.64159,
+    "daily_distance_km": 168.1,
+    "idle_time_minutes": 62
+  },
+  {
+    "id": 106,
+    "vehicle_id": 106,
+    "driver_id": 133,
+    "status": "maintenance",
+    "latitude": 44.69976,
+    "longitude": 13.27881,
+    "daily_distance_km": 306.2,
+    "idle_time_minutes": 213
+  },
+  {
+    "id": 107,
+    "vehicle_id": 107,
+    "driver_id": 188,
+    "status": "maintenance",
+    "latitude": 41.94061,
+    "longitude": 4.8853,
+    "daily_distance_km": 234.5,
+    "idle_time_minutes": 60
+  },
+  {
+    "id": 108,
+    "vehicle_id": 108,
+    "driver_id": 169,
+    "status": "idle",
+    "latitude": 42.5542,
+    "longitude": 18.88418,
+    "daily_distance_km": 298.7,
+    "idle_time_minutes": 239
+  },
+  {
+    "id": 109,
+    "vehicle_id": 109,
+    "driver_id": 197,
+    "status": "offline",
+    "latitude": 42.89129,
+    "longitude": 9.80322,
+    "daily_distance_km": 74.0,
+    "idle_time_minutes": 133
+  },
+  {
+    "id": 110,
+    "vehicle_id": 110,
+    "driver_id": 162,
+    "status": "idle",
+    "latitude": 41.60458,
+    "longitude": 8.72729,
+    "daily_distance_km": 74.6,
+    "idle_time_minutes": 11
+  },
+  {
+    "id": 111,
+    "vehicle_id": 111,
+    "driver_id": 111,
+    "status": "active",
+    "latitude": 47.86247,
+    "longitude": 5.22633,
+    "daily_distance_km": 167.7,
+    "idle_time_minutes": 98
+  },
+  {
+    "id": 112,
+    "vehicle_id": 112,
+    "driver_id": 125,
+    "status": "maintenance",
+    "latitude": 41.6362,
+    "longitude": 5.71588,
+    "daily_distance_km": 256.5,
+    "idle_time_minutes": 35
+  },
+  {
+    "id": 113,
+    "vehicle_id": 113,
+    "driver_id": 167,
+    "status": "offline",
+    "latitude": 41.43121,
+    "longitude": -7.42359,
+    "daily_distance_km": 437.7,
+    "idle_time_minutes": 165
+  },
+  {
+    "id": 114,
+    "vehicle_id": 114,
+    "driver_id": 193,
+    "status": "maintenance",
+    "latitude": 47.09533,
+    "longitude": -2.58957,
+    "daily_distance_km": 219.6,
+    "idle_time_minutes": 80
+  },
+  {
+    "id": 115,
+    "vehicle_id": 115,
+    "driver_id": 188,
+    "status": "idle",
+    "latitude": 44.60315,
+    "longitude": 1.16678,
+    "daily_distance_km": 141.3,
+    "idle_time_minutes": 236
+  },
+  {
+    "id": 116,
+    "vehicle_id": 116,
+    "driver_id": 107,
+    "status": "offline",
+    "latitude": 43.12617,
+    "longitude": -7.04062,
+    "daily_distance_km": 67.0,
+    "idle_time_minutes": 79
+  },
+  {
+    "id": 117,
+    "vehicle_id": 117,
+    "driver_id": 112,
+    "status": "active",
+    "latitude": 45.11727,
+    "longitude": -0.39333,
+    "daily_distance_km": 103.5,
+    "idle_time_minutes": 202
+  },
+  {
+    "id": 118,
+    "vehicle_id": 118,
+    "driver_id": 100,
+    "status": "idle",
+    "latitude": 44.07009,
+    "longitude": 3.64341,
+    "daily_distance_km": 2.9,
+    "idle_time_minutes": 144
+  },
+  {
+    "id": 119,
+    "vehicle_id": 119,
+    "driver_id": 184,
+    "status": "maintenance",
+    "latitude": 44.10888,
+    "longitude": 10.05573,
+    "daily_distance_km": 358.2,
+    "idle_time_minutes": 204
+  },
+  {
+    "id": 120,
+    "vehicle_id": 120,
+    "driver_id": 165,
+    "status": "offline",
+    "latitude": 42.75391,
+    "longitude": -7.76847,
+    "daily_distance_km": 333.3,
+    "idle_time_minutes": 53
+  }
+]
