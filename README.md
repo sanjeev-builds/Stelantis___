@@ -3,7 +3,7 @@
 
 A collaborative full-stack project built by a 5-person team for the Stellantis Tech Hackathon. The problem statement is revealed on-site — this repo is currently a **skeleton**: folder structure, Git workflow, and branch strategy are ready so the team can start coding within minutes of the brief dropping. This README is the single source of truth for branching and day-to-day Git workflow — read it before your first commit.
 
-> **Status:** Skeleton only. No app code yet — `frontend/`, `backend/`, and `ai/` contain placeholder folders (`.gitkeep`) ready to receive real code once the problem statement is known.
+> **Status:** Prepped, not scoped. `frontend/`, `backend/`, and `ai/` each contain a runnable starter template (generic dashboard, CRUD API, RAG pipeline) — not the real feature yet, since the problem statement is revealed on-site. Swap in the actual idea once the brief drops; see each folder's README for how.
 
 ## Table of Contents
 
@@ -72,7 +72,20 @@ git clone https://github.com/<org>/<repo>.git
 cd <repo>
 ```
 
-Real setup steps for `frontend/`, `backend/`, and `ai/` (installing dependencies, env vars, run commands) will be added to each folder's own README as soon as the problem statement lands and the tech choices are finalized. Until then, this is scaffolding only — see [Repository Structure](#repository-structure) for what exists today.
+### Quickstart
+
+```bash
+docker compose up --build
+```
+
+Brings up Postgres, the FastAPI backend (http://localhost:8000/docs for Swagger), and the Next.js frontend (http://localhost:3000) together. Or run each service standalone with the scripts in `scripts/` — see `scripts/README.md`. Each of `frontend/`, `backend/`, and `ai/` has its own README with setup detail and how to extend the starter template once the real problem statement lands.
+
+### While you're getting oriented
+
+- `datasets/` — mock vehicle/battery/maintenance/fleet JSON data (ready now) + links to real public datasets
+- `prompts/` — a Claude prompt library for common hackathon moments (debugging, architecture calls, presentation prep)
+- `docs/cheatsheets/` — one-page references for Git, FastAPI, React/Tailwind, SQL, Docker, LangChain/Gemini
+- `docs/presentation/pitch-kit.md` — 3-min/5-min pitch templates and judge FAQ prep
 
 ## Branch Strategy
 

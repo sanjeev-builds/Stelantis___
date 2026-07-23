@@ -1,0 +1,1082 @@
+[
+  {
+    "id": 1,
+    "vehicle_id": 31,
+    "component": "timing_belt",
+    "wear_pct": 91.1,
+    "predicted_failure_km": 9573,
+    "last_service_odometer": 91745,
+    "risk_level": "high"
+  },
+  {
+    "id": 2,
+    "vehicle_id": 39,
+    "component": "battery",
+    "wear_pct": 23.2,
+    "predicted_failure_km": 29299,
+    "last_service_odometer": 133118,
+    "risk_level": "low"
+  },
+  {
+    "id": 3,
+    "vehicle_id": 17,
+    "component": "battery",
+    "wear_pct": 81.3,
+    "predicted_failure_km": 37649,
+    "last_service_odometer": 135055,
+    "risk_level": "high"
+  },
+  {
+    "id": 4,
+    "vehicle_id": 38,
+    "component": "oil_filter",
+    "wear_pct": 83.7,
+    "predicted_failure_km": 4280,
+    "last_service_odometer": 17745,
+    "risk_level": "high"
+  },
+  {
+    "id": 5,
+    "vehicle_id": 29,
+    "component": "brake_pads",
+    "wear_pct": 68.1,
+    "predicted_failure_km": 2924,
+    "last_service_odometer": 51787,
+    "risk_level": "medium"
+  },
+  {
+    "id": 6,
+    "vehicle_id": 21,
+    "component": "brake_pads",
+    "wear_pct": 60.0,
+    "predicted_failure_km": 26834,
+    "last_service_odometer": 60313,
+    "risk_level": "medium"
+  },
+  {
+    "id": 7,
+    "vehicle_id": 2,
+    "component": "brake_pads",
+    "wear_pct": 2.5,
+    "predicted_failure_km": 26788,
+    "last_service_odometer": 109610,
+    "risk_level": "low"
+  },
+  {
+    "id": 8,
+    "vehicle_id": 45,
+    "component": "tires",
+    "wear_pct": 2.7,
+    "predicted_failure_km": 29407,
+    "last_service_odometer": 87333,
+    "risk_level": "low"
+  },
+  {
+    "id": 9,
+    "vehicle_id": 1,
+    "component": "tires",
+    "wear_pct": 0.1,
+    "predicted_failure_km": 24764,
+    "last_service_odometer": 54581,
+    "risk_level": "low"
+  },
+  {
+    "id": 10,
+    "vehicle_id": 1,
+    "component": "tires",
+    "wear_pct": 75.4,
+    "predicted_failure_km": 915,
+    "last_service_odometer": 58372,
+    "risk_level": "medium"
+  },
+  {
+    "id": 11,
+    "vehicle_id": 6,
+    "component": "battery",
+    "wear_pct": 23.6,
+    "predicted_failure_km": 3551,
+    "last_service_odometer": 14679,
+    "risk_level": "low"
+  },
+  {
+    "id": 12,
+    "vehicle_id": 7,
+    "component": "oil_filter",
+    "wear_pct": 53.0,
+    "predicted_failure_km": 26807,
+    "last_service_odometer": 76883,
+    "risk_level": "medium"
+  },
+  {
+    "id": 13,
+    "vehicle_id": 31,
+    "component": "oil_filter",
+    "wear_pct": 74.0,
+    "predicted_failure_km": 22666,
+    "last_service_odometer": 114848,
+    "risk_level": "medium"
+  },
+  {
+    "id": 14,
+    "vehicle_id": 26,
+    "component": "brake_pads",
+    "wear_pct": 46.8,
+    "predicted_failure_km": 26034,
+    "last_service_odometer": 140470,
+    "risk_level": "low"
+  },
+  {
+    "id": 15,
+    "vehicle_id": 5,
+    "component": "brake_pads",
+    "wear_pct": 23.0,
+    "predicted_failure_km": 17362,
+    "last_service_odometer": 110841,
+    "risk_level": "low"
+  },
+  {
+    "id": 16,
+    "vehicle_id": 35,
+    "component": "brake_pads",
+    "wear_pct": 60.9,
+    "predicted_failure_km": 27845,
+    "last_service_odometer": 31403,
+    "risk_level": "medium"
+  },
+  {
+    "id": 17,
+    "vehicle_id": 44,
+    "component": "battery",
+    "wear_pct": 20.9,
+    "predicted_failure_km": 18809,
+    "last_service_odometer": 9422,
+    "risk_level": "low"
+  },
+  {
+    "id": 18,
+    "vehicle_id": 23,
+    "component": "timing_belt",
+    "wear_pct": 23.7,
+    "predicted_failure_km": 36941,
+    "last_service_odometer": 122716,
+    "risk_level": "low"
+  },
+  {
+    "id": 19,
+    "vehicle_id": 22,
+    "component": "battery",
+    "wear_pct": 17.9,
+    "predicted_failure_km": 19135,
+    "last_service_odometer": 82703,
+    "risk_level": "low"
+  },
+  {
+    "id": 20,
+    "vehicle_id": 30,
+    "component": "tires",
+    "wear_pct": 97.7,
+    "predicted_failure_km": 10452,
+    "last_service_odometer": 108374,
+    "risk_level": "high"
+  },
+  {
+    "id": 21,
+    "vehicle_id": 2,
+    "component": "timing_belt",
+    "wear_pct": 1.9,
+    "predicted_failure_km": 5824,
+    "last_service_odometer": 36863,
+    "risk_level": "low"
+  },
+  {
+    "id": 22,
+    "vehicle_id": 43,
+    "component": "battery",
+    "wear_pct": 49.2,
+    "predicted_failure_km": 36420,
+    "last_service_odometer": 76322,
+    "risk_level": "low"
+  },
+  {
+    "id": 23,
+    "vehicle_id": 4,
+    "component": "brake_pads",
+    "wear_pct": 13.9,
+    "predicted_failure_km": 25413,
+    "last_service_odometer": 103401,
+    "risk_level": "low"
+  },
+  {
+    "id": 24,
+    "vehicle_id": 8,
+    "component": "brake_pads",
+    "wear_pct": 23.0,
+    "predicted_failure_km": 29165,
+    "last_service_odometer": 28134,
+    "risk_level": "low"
+  },
+  {
+    "id": 25,
+    "vehicle_id": 12,
+    "component": "brake_pads",
+    "wear_pct": 68.4,
+    "predicted_failure_km": 28746,
+    "last_service_odometer": 24717,
+    "risk_level": "medium"
+  },
+  {
+    "id": 26,
+    "vehicle_id": 31,
+    "component": "tires",
+    "wear_pct": 68.9,
+    "predicted_failure_km": 21181,
+    "last_service_odometer": 140906,
+    "risk_level": "medium"
+  },
+  {
+    "id": 27,
+    "vehicle_id": 12,
+    "component": "oil_filter",
+    "wear_pct": 12.8,
+    "predicted_failure_km": 13030,
+    "last_service_odometer": 122723,
+    "risk_level": "low"
+  },
+  {
+    "id": 28,
+    "vehicle_id": 15,
+    "component": "tires",
+    "wear_pct": 14.0,
+    "predicted_failure_km": 20950,
+    "last_service_odometer": 32445,
+    "risk_level": "low"
+  },
+  {
+    "id": 29,
+    "vehicle_id": 50,
+    "component": "timing_belt",
+    "wear_pct": 16.3,
+    "predicted_failure_km": 3708,
+    "last_service_odometer": 143632,
+    "risk_level": "low"
+  },
+  {
+    "id": 30,
+    "vehicle_id": 14,
+    "component": "oil_filter",
+    "wear_pct": 59.4,
+    "predicted_failure_km": 29520,
+    "last_service_odometer": 13817,
+    "risk_level": "medium"
+  },
+  {
+    "id": 31,
+    "vehicle_id": 37,
+    "component": "oil_filter",
+    "wear_pct": 91.5,
+    "predicted_failure_km": 33979,
+    "last_service_odometer": 100098,
+    "risk_level": "high"
+  },
+  {
+    "id": 32,
+    "vehicle_id": 17,
+    "component": "oil_filter",
+    "wear_pct": 17.0,
+    "predicted_failure_km": 13528,
+    "last_service_odometer": 102472,
+    "risk_level": "low"
+  },
+  {
+    "id": 33,
+    "vehicle_id": 26,
+    "component": "battery",
+    "wear_pct": 0.6,
+    "predicted_failure_km": 9702,
+    "last_service_odometer": 44615,
+    "risk_level": "low"
+  },
+  {
+    "id": 34,
+    "vehicle_id": 3,
+    "component": "timing_belt",
+    "wear_pct": 44.4,
+    "predicted_failure_km": 23843,
+    "last_service_odometer": 97601,
+    "risk_level": "low"
+  },
+  {
+    "id": 35,
+    "vehicle_id": 7,
+    "component": "battery",
+    "wear_pct": 76.8,
+    "predicted_failure_km": 12198,
+    "last_service_odometer": 80509,
+    "risk_level": "medium"
+  },
+  {
+    "id": 36,
+    "vehicle_id": 7,
+    "component": "timing_belt",
+    "wear_pct": 83.8,
+    "predicted_failure_km": 14298,
+    "last_service_odometer": 131268,
+    "risk_level": "high"
+  },
+  {
+    "id": 37,
+    "vehicle_id": 50,
+    "component": "tires",
+    "wear_pct": 18.5,
+    "predicted_failure_km": 24223,
+    "last_service_odometer": 98138,
+    "risk_level": "low"
+  },
+  {
+    "id": 38,
+    "vehicle_id": 49,
+    "component": "alternator",
+    "wear_pct": 72.5,
+    "predicted_failure_km": 16113,
+    "last_service_odometer": 143880,
+    "risk_level": "medium"
+  },
+  {
+    "id": 39,
+    "vehicle_id": 30,
+    "component": "tires",
+    "wear_pct": 41.5,
+    "predicted_failure_km": 29042,
+    "last_service_odometer": 143644,
+    "risk_level": "low"
+  },
+  {
+    "id": 40,
+    "vehicle_id": 46,
+    "component": "brake_pads",
+    "wear_pct": 47.4,
+    "predicted_failure_km": 20727,
+    "last_service_odometer": 125501,
+    "risk_level": "low"
+  },
+  {
+    "id": 41,
+    "vehicle_id": 1,
+    "component": "alternator",
+    "wear_pct": 85.3,
+    "predicted_failure_km": 7868,
+    "last_service_odometer": 46312,
+    "risk_level": "high"
+  },
+  {
+    "id": 42,
+    "vehicle_id": 41,
+    "component": "alternator",
+    "wear_pct": 97.7,
+    "predicted_failure_km": 20965,
+    "last_service_odometer": 48014,
+    "risk_level": "high"
+  },
+  {
+    "id": 43,
+    "vehicle_id": 38,
+    "component": "oil_filter",
+    "wear_pct": 37.6,
+    "predicted_failure_km": 7352,
+    "last_service_odometer": 27509,
+    "risk_level": "low"
+  },
+  {
+    "id": 44,
+    "vehicle_id": 16,
+    "component": "brake_pads",
+    "wear_pct": 47.9,
+    "predicted_failure_km": 3621,
+    "last_service_odometer": 118122,
+    "risk_level": "low"
+  },
+  {
+    "id": 45,
+    "vehicle_id": 50,
+    "component": "timing_belt",
+    "wear_pct": 75.8,
+    "predicted_failure_km": 12874,
+    "last_service_odometer": 86987,
+    "risk_level": "medium"
+  },
+  {
+    "id": 46,
+    "vehicle_id": 6,
+    "component": "battery",
+    "wear_pct": 50.6,
+    "predicted_failure_km": 19460,
+    "last_service_odometer": 111211,
+    "risk_level": "medium"
+  },
+  {
+    "id": 47,
+    "vehicle_id": 20,
+    "component": "timing_belt",
+    "wear_pct": 1.9,
+    "predicted_failure_km": 23266,
+    "last_service_odometer": 79812,
+    "risk_level": "low"
+  },
+  {
+    "id": 48,
+    "vehicle_id": 27,
+    "component": "alternator",
+    "wear_pct": 91.2,
+    "predicted_failure_km": 35927,
+    "last_service_odometer": 27708,
+    "risk_level": "high"
+  },
+  {
+    "id": 49,
+    "vehicle_id": 22,
+    "component": "alternator",
+    "wear_pct": 58.3,
+    "predicted_failure_km": 15514,
+    "last_service_odometer": 80518,
+    "risk_level": "medium"
+  },
+  {
+    "id": 50,
+    "vehicle_id": 22,
+    "component": "oil_filter",
+    "wear_pct": 89.5,
+    "predicted_failure_km": 31987,
+    "last_service_odometer": 486,
+    "risk_level": "high"
+  },
+  {
+    "id": 51,
+    "vehicle_id": 30,
+    "component": "battery",
+    "wear_pct": 7.0,
+    "predicted_failure_km": 36198,
+    "last_service_odometer": 53893,
+    "risk_level": "low"
+  },
+  {
+    "id": 52,
+    "vehicle_id": 22,
+    "component": "timing_belt",
+    "wear_pct": 33.1,
+    "predicted_failure_km": 18968,
+    "last_service_odometer": 43995,
+    "risk_level": "low"
+  },
+  {
+    "id": 53,
+    "vehicle_id": 17,
+    "component": "tires",
+    "wear_pct": 47.8,
+    "predicted_failure_km": 20919,
+    "last_service_odometer": 1134,
+    "risk_level": "low"
+  },
+  {
+    "id": 54,
+    "vehicle_id": 20,
+    "component": "timing_belt",
+    "wear_pct": 75.7,
+    "predicted_failure_km": 25716,
+    "last_service_odometer": 39459,
+    "risk_level": "medium"
+  },
+  {
+    "id": 55,
+    "vehicle_id": 35,
+    "component": "brake_pads",
+    "wear_pct": 62.2,
+    "predicted_failure_km": 16574,
+    "last_service_odometer": 88050,
+    "risk_level": "medium"
+  },
+  {
+    "id": 56,
+    "vehicle_id": 11,
+    "component": "timing_belt",
+    "wear_pct": 19.5,
+    "predicted_failure_km": 32605,
+    "last_service_odometer": 103614,
+    "risk_level": "low"
+  },
+  {
+    "id": 57,
+    "vehicle_id": 7,
+    "component": "alternator",
+    "wear_pct": 76.7,
+    "predicted_failure_km": 28478,
+    "last_service_odometer": 74509,
+    "risk_level": "medium"
+  },
+  {
+    "id": 58,
+    "vehicle_id": 39,
+    "component": "tires",
+    "wear_pct": 6.8,
+    "predicted_failure_km": 29901,
+    "last_service_odometer": 36124,
+    "risk_level": "low"
+  },
+  {
+    "id": 59,
+    "vehicle_id": 38,
+    "component": "battery",
+    "wear_pct": 42.8,
+    "predicted_failure_km": 13281,
+    "last_service_odometer": 131020,
+    "risk_level": "low"
+  },
+  {
+    "id": 60,
+    "vehicle_id": 1,
+    "component": "battery",
+    "wear_pct": 57.2,
+    "predicted_failure_km": 12851,
+    "last_service_odometer": 139672,
+    "risk_level": "medium"
+  },
+  {
+    "id": 61,
+    "vehicle_id": 45,
+    "component": "brake_pads",
+    "wear_pct": 88.1,
+    "predicted_failure_km": 29758,
+    "last_service_odometer": 140875,
+    "risk_level": "high"
+  },
+  {
+    "id": 62,
+    "vehicle_id": 44,
+    "component": "alternator",
+    "wear_pct": 92.1,
+    "predicted_failure_km": 1034,
+    "last_service_odometer": 107069,
+    "risk_level": "high"
+  },
+  {
+    "id": 63,
+    "vehicle_id": 13,
+    "component": "brake_pads",
+    "wear_pct": 27.4,
+    "predicted_failure_km": 17462,
+    "last_service_odometer": 106247,
+    "risk_level": "low"
+  },
+  {
+    "id": 64,
+    "vehicle_id": 18,
+    "component": "oil_filter",
+    "wear_pct": 99.6,
+    "predicted_failure_km": 34438,
+    "last_service_odometer": 102924,
+    "risk_level": "high"
+  },
+  {
+    "id": 65,
+    "vehicle_id": 45,
+    "component": "alternator",
+    "wear_pct": 84.6,
+    "predicted_failure_km": 36329,
+    "last_service_odometer": 13160,
+    "risk_level": "high"
+  },
+  {
+    "id": 66,
+    "vehicle_id": 48,
+    "component": "oil_filter",
+    "wear_pct": 75.2,
+    "predicted_failure_km": 22579,
+    "last_service_odometer": 105775,
+    "risk_level": "medium"
+  },
+  {
+    "id": 67,
+    "vehicle_id": 36,
+    "component": "tires",
+    "wear_pct": 32.4,
+    "predicted_failure_km": 10600,
+    "last_service_odometer": 6022,
+    "risk_level": "low"
+  },
+  {
+    "id": 68,
+    "vehicle_id": 18,
+    "component": "timing_belt",
+    "wear_pct": 0.8,
+    "predicted_failure_km": 28831,
+    "last_service_odometer": 74064,
+    "risk_level": "low"
+  },
+  {
+    "id": 69,
+    "vehicle_id": 9,
+    "component": "timing_belt",
+    "wear_pct": 22.2,
+    "predicted_failure_km": 24163,
+    "last_service_odometer": 43661,
+    "risk_level": "low"
+  },
+  {
+    "id": 70,
+    "vehicle_id": 26,
+    "component": "timing_belt",
+    "wear_pct": 58.7,
+    "predicted_failure_km": 23944,
+    "last_service_odometer": 64283,
+    "risk_level": "medium"
+  },
+  {
+    "id": 71,
+    "vehicle_id": 39,
+    "component": "timing_belt",
+    "wear_pct": 1.8,
+    "predicted_failure_km": 4997,
+    "last_service_odometer": 64475,
+    "risk_level": "low"
+  },
+  {
+    "id": 72,
+    "vehicle_id": 7,
+    "component": "battery",
+    "wear_pct": 78.9,
+    "predicted_failure_km": 28021,
+    "last_service_odometer": 83621,
+    "risk_level": "medium"
+  },
+  {
+    "id": 73,
+    "vehicle_id": 43,
+    "component": "brake_pads",
+    "wear_pct": 70.1,
+    "predicted_failure_km": 9556,
+    "last_service_odometer": 13438,
+    "risk_level": "medium"
+  },
+  {
+    "id": 74,
+    "vehicle_id": 49,
+    "component": "tires",
+    "wear_pct": 56.1,
+    "predicted_failure_km": 29978,
+    "last_service_odometer": 104263,
+    "risk_level": "medium"
+  },
+  {
+    "id": 75,
+    "vehicle_id": 42,
+    "component": "tires",
+    "wear_pct": 13.5,
+    "predicted_failure_km": 14424,
+    "last_service_odometer": 106541,
+    "risk_level": "low"
+  },
+  {
+    "id": 76,
+    "vehicle_id": 26,
+    "component": "alternator",
+    "wear_pct": 26.2,
+    "predicted_failure_km": 13708,
+    "last_service_odometer": 22233,
+    "risk_level": "low"
+  },
+  {
+    "id": 77,
+    "vehicle_id": 47,
+    "component": "timing_belt",
+    "wear_pct": 89.3,
+    "predicted_failure_km": 38635,
+    "last_service_odometer": 65873,
+    "risk_level": "high"
+  },
+  {
+    "id": 78,
+    "vehicle_id": 27,
+    "component": "timing_belt",
+    "wear_pct": 25.2,
+    "predicted_failure_km": 39572,
+    "last_service_odometer": 119375,
+    "risk_level": "low"
+  },
+  {
+    "id": 79,
+    "vehicle_id": 32,
+    "component": "oil_filter",
+    "wear_pct": 15.6,
+    "predicted_failure_km": 31848,
+    "last_service_odometer": 44363,
+    "risk_level": "low"
+  },
+  {
+    "id": 80,
+    "vehicle_id": 50,
+    "component": "battery",
+    "wear_pct": 40.0,
+    "predicted_failure_km": 7911,
+    "last_service_odometer": 148596,
+    "risk_level": "low"
+  },
+  {
+    "id": 81,
+    "vehicle_id": 30,
+    "component": "tires",
+    "wear_pct": 31.9,
+    "predicted_failure_km": 6540,
+    "last_service_odometer": 119771,
+    "risk_level": "low"
+  },
+  {
+    "id": 82,
+    "vehicle_id": 46,
+    "component": "battery",
+    "wear_pct": 13.3,
+    "predicted_failure_km": 21262,
+    "last_service_odometer": 131157,
+    "risk_level": "low"
+  },
+  {
+    "id": 83,
+    "vehicle_id": 20,
+    "component": "brake_pads",
+    "wear_pct": 89.0,
+    "predicted_failure_km": 16539,
+    "last_service_odometer": 33940,
+    "risk_level": "high"
+  },
+  {
+    "id": 84,
+    "vehicle_id": 25,
+    "component": "oil_filter",
+    "wear_pct": 67.7,
+    "predicted_failure_km": 2836,
+    "last_service_odometer": 73235,
+    "risk_level": "medium"
+  },
+  {
+    "id": 85,
+    "vehicle_id": 1,
+    "component": "alternator",
+    "wear_pct": 95.7,
+    "predicted_failure_km": 2192,
+    "last_service_odometer": 19655,
+    "risk_level": "high"
+  },
+  {
+    "id": 86,
+    "vehicle_id": 30,
+    "component": "timing_belt",
+    "wear_pct": 76.7,
+    "predicted_failure_km": 18141,
+    "last_service_odometer": 137219,
+    "risk_level": "medium"
+  },
+  {
+    "id": 87,
+    "vehicle_id": 35,
+    "component": "brake_pads",
+    "wear_pct": 24.7,
+    "predicted_failure_km": 19267,
+    "last_service_odometer": 64256,
+    "risk_level": "low"
+  },
+  {
+    "id": 88,
+    "vehicle_id": 45,
+    "component": "oil_filter",
+    "wear_pct": 90.8,
+    "predicted_failure_km": 5044,
+    "last_service_odometer": 108144,
+    "risk_level": "high"
+  },
+  {
+    "id": 89,
+    "vehicle_id": 49,
+    "component": "brake_pads",
+    "wear_pct": 73.1,
+    "predicted_failure_km": 22418,
+    "last_service_odometer": 24424,
+    "risk_level": "medium"
+  },
+  {
+    "id": 90,
+    "vehicle_id": 9,
+    "component": "brake_pads",
+    "wear_pct": 78.7,
+    "predicted_failure_km": 4617,
+    "last_service_odometer": 25588,
+    "risk_level": "medium"
+  },
+  {
+    "id": 91,
+    "vehicle_id": 39,
+    "component": "tires",
+    "wear_pct": 18.6,
+    "predicted_failure_km": 6809,
+    "last_service_odometer": 56860,
+    "risk_level": "low"
+  },
+  {
+    "id": 92,
+    "vehicle_id": 20,
+    "component": "timing_belt",
+    "wear_pct": 63.2,
+    "predicted_failure_km": 10785,
+    "last_service_odometer": 31804,
+    "risk_level": "medium"
+  },
+  {
+    "id": 93,
+    "vehicle_id": 43,
+    "component": "brake_pads",
+    "wear_pct": 34.4,
+    "predicted_failure_km": 17054,
+    "last_service_odometer": 138803,
+    "risk_level": "low"
+  },
+  {
+    "id": 94,
+    "vehicle_id": 14,
+    "component": "brake_pads",
+    "wear_pct": 68.6,
+    "predicted_failure_km": 1921,
+    "last_service_odometer": 59195,
+    "risk_level": "medium"
+  },
+  {
+    "id": 95,
+    "vehicle_id": 37,
+    "component": "brake_pads",
+    "wear_pct": 79.7,
+    "predicted_failure_km": 16583,
+    "last_service_odometer": 3718,
+    "risk_level": "medium"
+  },
+  {
+    "id": 96,
+    "vehicle_id": 16,
+    "component": "brake_pads",
+    "wear_pct": 62.9,
+    "predicted_failure_km": 980,
+    "last_service_odometer": 16990,
+    "risk_level": "medium"
+  },
+  {
+    "id": 97,
+    "vehicle_id": 28,
+    "component": "alternator",
+    "wear_pct": 5.4,
+    "predicted_failure_km": 7912,
+    "last_service_odometer": 28669,
+    "risk_level": "low"
+  },
+  {
+    "id": 98,
+    "vehicle_id": 50,
+    "component": "brake_pads",
+    "wear_pct": 99.5,
+    "predicted_failure_km": 7226,
+    "last_service_odometer": 62423,
+    "risk_level": "high"
+  },
+  {
+    "id": 99,
+    "vehicle_id": 23,
+    "component": "oil_filter",
+    "wear_pct": 75.3,
+    "predicted_failure_km": 39793,
+    "last_service_odometer": 21570,
+    "risk_level": "medium"
+  },
+  {
+    "id": 100,
+    "vehicle_id": 25,
+    "component": "tires",
+    "wear_pct": 94.1,
+    "predicted_failure_km": 16805,
+    "last_service_odometer": 41043,
+    "risk_level": "high"
+  },
+  {
+    "id": 101,
+    "vehicle_id": 39,
+    "component": "oil_filter",
+    "wear_pct": 74.8,
+    "predicted_failure_km": 23697,
+    "last_service_odometer": 144231,
+    "risk_level": "medium"
+  },
+  {
+    "id": 102,
+    "vehicle_id": 36,
+    "component": "brake_pads",
+    "wear_pct": 19.4,
+    "predicted_failure_km": 30682,
+    "last_service_odometer": 145466,
+    "risk_level": "low"
+  },
+  {
+    "id": 103,
+    "vehicle_id": 1,
+    "component": "brake_pads",
+    "wear_pct": 77.5,
+    "predicted_failure_km": 11642,
+    "last_service_odometer": 17991,
+    "risk_level": "medium"
+  },
+  {
+    "id": 104,
+    "vehicle_id": 23,
+    "component": "timing_belt",
+    "wear_pct": 47.8,
+    "predicted_failure_km": 35475,
+    "last_service_odometer": 60447,
+    "risk_level": "low"
+  },
+  {
+    "id": 105,
+    "vehicle_id": 22,
+    "component": "timing_belt",
+    "wear_pct": 99.1,
+    "predicted_failure_km": 23061,
+    "last_service_odometer": 44827,
+    "risk_level": "high"
+  },
+  {
+    "id": 106,
+    "vehicle_id": 12,
+    "component": "battery",
+    "wear_pct": 37.0,
+    "predicted_failure_km": 19409,
+    "last_service_odometer": 115235,
+    "risk_level": "low"
+  },
+  {
+    "id": 107,
+    "vehicle_id": 37,
+    "component": "tires",
+    "wear_pct": 98.7,
+    "predicted_failure_km": 33126,
+    "last_service_odometer": 123245,
+    "risk_level": "high"
+  },
+  {
+    "id": 108,
+    "vehicle_id": 18,
+    "component": "timing_belt",
+    "wear_pct": 53.3,
+    "predicted_failure_km": 18638,
+    "last_service_odometer": 70698,
+    "risk_level": "medium"
+  },
+  {
+    "id": 109,
+    "vehicle_id": 3,
+    "component": "timing_belt",
+    "wear_pct": 63.3,
+    "predicted_failure_km": 22326,
+    "last_service_odometer": 20823,
+    "risk_level": "medium"
+  },
+  {
+    "id": 110,
+    "vehicle_id": 45,
+    "component": "battery",
+    "wear_pct": 97.2,
+    "predicted_failure_km": 32577,
+    "last_service_odometer": 10932,
+    "risk_level": "high"
+  },
+  {
+    "id": 111,
+    "vehicle_id": 23,
+    "component": "alternator",
+    "wear_pct": 31.5,
+    "predicted_failure_km": 11540,
+    "last_service_odometer": 90331,
+    "risk_level": "low"
+  },
+  {
+    "id": 112,
+    "vehicle_id": 1,
+    "component": "brake_pads",
+    "wear_pct": 7.3,
+    "predicted_failure_km": 28112,
+    "last_service_odometer": 89163,
+    "risk_level": "low"
+  },
+  {
+    "id": 113,
+    "vehicle_id": 25,
+    "component": "timing_belt",
+    "wear_pct": 74.8,
+    "predicted_failure_km": 3565,
+    "last_service_odometer": 14083,
+    "risk_level": "medium"
+  },
+  {
+    "id": 114,
+    "vehicle_id": 50,
+    "component": "oil_filter",
+    "wear_pct": 24.4,
+    "predicted_failure_km": 3703,
+    "last_service_odometer": 48200,
+    "risk_level": "low"
+  },
+  {
+    "id": 115,
+    "vehicle_id": 24,
+    "component": "alternator",
+    "wear_pct": 26.4,
+    "predicted_failure_km": 28980,
+    "last_service_odometer": 99132,
+    "risk_level": "low"
+  },
+  {
+    "id": 116,
+    "vehicle_id": 46,
+    "component": "battery",
+    "wear_pct": 46.7,
+    "predicted_failure_km": 13715,
+    "last_service_odometer": 73878,
+    "risk_level": "low"
+  },
+  {
+    "id": 117,
+    "vehicle_id": 33,
+    "component": "tires",
+    "wear_pct": 54.0,
+    "predicted_failure_km": 9092,
+    "last_service_odometer": 90907,
+    "risk_level": "medium"
+  },
+  {
+    "id": 118,
+    "vehicle_id": 37,
+    "component": "timing_belt",
+    "wear_pct": 96.5,
+    "predicted_failure_km": 28933,
+    "last_service_odometer": 92876,
+    "risk_level": "high"
+  },
+  {
+    "id": 119,
+    "vehicle_id": 42,
+    "component": "timing_belt",
+    "wear_pct": 57.2,
+    "predicted_failure_km": 38516,
+    "last_service_odometer": 44305,
+    "risk_level": "medium"
+  },
+  {
+    "id": 120,
+    "vehicle_id": 28,
+    "component": "brake_pads",
+    "wear_pct": 90.0,
+    "predicted_failure_km": 9940,
+    "last_service_odometer": 7038,
+    "risk_level": "high"
+  }
+]
