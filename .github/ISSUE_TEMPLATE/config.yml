@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Team Chat
+    url: https://github.com/orgs/<org>/teams/<team>/discussions
+    about: For quick questions, use the team chat instead of an issue.
