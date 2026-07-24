@@ -55,7 +55,6 @@ Status as of prep session, before the problem statement drops.
 - [ ] `docker compose up --build` — not yet run since the SQLite switch. Start Docker Desktop, then run `docker compose up --build` (or `scripts\run-all.ps1`) to smoke-test the full stack together
 
 ## Reference material
-- [x] `prompts/` — 13-file Claude prompt library (React, FastAPI, Python, SQL, Docker, debugging, architecture, presentation, judge Q&A, UI, performance, bug-fixing, deployment)
 - [x] `docs/cheatsheets/` — Git, FastAPI, React/Tailwind, Python, SQL, REST APIs, LangChain/Gemini, Docker
 - [x] `docs/presentation/pitch-kit.md` — 3-min/5-min pitch templates, judge FAQ draft, innovation/future-scope prompts
 - [x] `docs/presentation/notes.md` — existing demo script skeleton (untouched, fill in live)

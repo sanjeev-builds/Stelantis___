@@ -83,7 +83,6 @@ Brings up Postgres, the FastAPI backend (http://localhost:8000/docs for Swagger)
 ### While you're getting oriented
 
 - `datasets/` — mock vehicle/battery/maintenance/fleet JSON data (ready now) + links to real public datasets
-- `prompts/` — a Claude prompt library for common hackathon moments (debugging, architecture calls, presentation prep)
 - `docs/cheatsheets/` — one-page references for Git, FastAPI, React/Tailwind, SQL, Docker, LangChain/Gemini
 - `docs/presentation/pitch-kit.md` — 3-min/5-min pitch templates and judge FAQ prep
 
