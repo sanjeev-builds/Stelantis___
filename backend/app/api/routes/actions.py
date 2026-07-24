@@ -10,10 +10,24 @@ from app.core.security import get_current_user
 from app.db.models import Alert, HealthScore, MaintenanceLog, Telemetry, Vehicle
 from app.db.seed import seed_if_empty
 from app.db.session import get_db
+from app.scoring.config import BATTERY_WEIGHTS, LATEST_FIRMWARE_VERSION
+from app.scoring.health import cybersecurity_score, normalize, vehicle_health_score
+from app.scoring.predictive import evaluate_alerts
+
+# The real battery_health_score() formula scores battery_voltage against the
+# 12V accessory battery (NOMINAL_BATTERY_VOLTAGE=12.6 in scoring/config.py) -
+# correct for real ingested telemetry, but the Simulator UI's slider models
+# the HV traction pack (default 380V). Reusing the 12V nominal here would
+# score every realistic HV value as maximally deviated. This is a
+# simulate-only substitute for the voltage sub-score; the persisted /analyze
+# path is untouched.
+_SIMULATOR_HV_NOMINAL_VOLTAGE = 400.0
+_SIMULATOR_HV_VOLTAGE_DEVIATION_THRESHOLDS = (0.0, 60.0)
 from app.schemas.alert import AlertOut, PredictRequest
 from app.schemas.chat import ChatRequest, ChatResponse
 from app.schemas.fleet import FleetSummaryRow
 from app.schemas.health import AnalyzeRequest, HealthScoreOut
+from app.schemas.simulate import SimulateRequest, SimulateResponse
 from app.schemas.vehicle import VehicleOut
 from app.services import ai_client
 from app.services.scoring_service import (
@@ -25,6 +39,94 @@ from app.services.scoring_service import (
 )
 
 router = APIRouter(tags=["actions"])
+
+
+@router.post("/simulate", response_model=SimulateResponse)
+def simulate(payload: SimulateRequest) -> SimulateResponse:
+    """Stateless what-if scoring: run the same deterministic engine used by
+    /analyze on hypothetical values, no vehicle or DB row required. Backs the
+    Simulator page - nothing here is persisted."""
+    telemetry = {
+        "battery_pct": payload.battery_pct,
+        "battery_voltage": payload.battery_voltage,
+        "battery_temp_c": payload.battery_temp_c,
+        "ecu_temp_c": payload.ecu_temp_c,
+        "cpu_usage_pct": payload.cpu_usage_pct,
+        "ram_usage_pct": payload.ram_usage_pct,
+        "coolant_temp_c": payload.coolant_temp_c,
+        "oil_pressure_kpa": payload.oil_pressure_kpa,
+        "engine_load_pct": payload.engine_load_pct,
+        "fault_codes": payload.fault_codes,
+        "encryption_status": payload.encryption_status,
+        "can_bus_error_count": payload.can_bus_error_count,
+        "unauthorized_access_attempts": payload.auth_attempts,
+    }
+    vehicle = {
+        "charge_cycles": payload.charge_cycles,
+        "mileage_km": payload.mileage_km,
+        "firmware_version": payload.firmware_version or LATEST_FIRMWARE_VERSION,
+    }
+    # Inline battery formula (mirrors scoring.health.battery_health_score)
+    # substituting an HV-appropriate voltage sub-score - see the module-level
+    # comment on _SIMULATOR_HV_NOMINAL_VOLTAGE above.
+    charge_score = max(0.0, min(100.0, payload.battery_pct))
+    voltage_deviation = abs(payload.battery_voltage - _SIMULATOR_HV_NOMINAL_VOLTAGE)
+    voltage_score = normalize(voltage_deviation, *_SIMULATOR_HV_VOLTAGE_DEVIATION_THRESHOLDS)
+    temp_score = normalize(payload.battery_temp_c, 25.0, 60.0)
+    cycle_score = normalize(payload.charge_cycles, 0, 1500)
+    age_score = normalize(payload.mileage_km, 0, 200_000)
+    w = BATTERY_WEIGHTS
+    battery = round(
+        w["charge"] * charge_score
+        + w["voltage"] * voltage_score
+        + w["temp"] * temp_score
+        + w["cycles"] * cycle_score
+        + w["age"] * age_score,
+        2,
+    )
+    cyber = cybersecurity_score(telemetry, vehicle)
+    overall = vehicle_health_score(telemetry, vehicle, battery, cyber)
+
+    triggered = evaluate_alerts(
+        [
+            {
+                **telemetry,
+                "battery_health_score": battery,
+                "vehicle_health_score": overall,
+            }
+        ]
+    )
+    # Deterministic, not Gemini: the frontend re-runs /simulate on every
+    # slider tick, so a synchronous AI call here would make every keystroke
+    # wait on the network and would exhaust the same tight Gemini quota
+    # /chat and /predict need. Matches /analyze's own rule of never putting
+    # AI in a hot, high-frequency path.
+    worst = min(("battery", battery), ("cybersecurity", cyber), ("overall", overall), key=lambda pair: pair[1])
+    if triggered:
+        summary = f"{len(triggered)} predictive alert(s) triggered - most urgent: {triggered[0]['message']}"
+    elif worst[1] < 70:
+        summary = f"{worst[0].capitalize()} score is the weakest area at {worst[1]:.0f}/100; no threshold alerts triggered yet."
+    else:
+        summary = f"All scores nominal (lowest is {worst[0]} at {worst[1]:.0f}/100). No predictive alerts triggered."
+    return SimulateResponse(
+        vehicle_health_score=overall,
+        battery_health_score=battery,
+        cybersecurity_score=cyber,
+        ai_summary=summary,
+        triggered_alerts=triggered,
+    )
+
+
+@router.get("/summary/{vehicle_id}")
+def vehicle_summary(vehicle_id: str, db: Session = Depends(get_db)) -> dict[str, str]:
+    """Plain-language AI summary of a vehicle's current state - backs the
+    vehicle detail page's 'Gemini AI Diagnostic Summary' card."""
+    try:
+        context = build_vehicle_context(db, vehicle_id)
+    except VehicleNotFoundError as exc:
+        raise HTTPException(status_code=404, detail="Vehicle not found") from exc
+    summary = ai_client.chat(context, "Give a concise 2-3 sentence health summary and any recommended action.")
+    return {"summary": summary}
 
 
 @router.post("/analyze", response_model=HealthScoreOut)

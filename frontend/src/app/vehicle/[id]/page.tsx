@@ -63,8 +63,8 @@ export default function VehicleDetailPage({ params }: { params: Promise<{ id: st
   const handleRunAnalysis = async () => {
     setAnalyzing(true);
     try {
-      await axios.post(`http://localhost:8000/api/analyze/${vehicleId}`);
-      await axios.post(`http://localhost:8000/api/predict/${vehicleId}`);
+      await axios.post(`http://localhost:8000/api/analyze`, { vehicle_id: vehicleId });
+      await axios.post(`http://localhost:8000/api/predict`, { vehicle_id: vehicleId });
       await fetchVehicleData();
     } catch (err) {
       console.error("Analysis execution error", err);

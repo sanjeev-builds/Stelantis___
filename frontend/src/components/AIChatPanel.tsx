@@ -30,11 +30,11 @@ export function AIChatPanel({ vehicleId }: AIChatPanelProps) {
     try {
       const res = await axios.post("http://localhost:8000/api/chat", {
         vehicle_id: vehicleId,
-        query: userText,
+        question: userText,
       });
 
-      if (res.data && res.data.response) {
-        setMessages((prev) => [...prev, { sender: "ai", text: res.data.response }]);
+      if (res.data && res.data.answer) {
+        setMessages((prev) => [...prev, { sender: "ai", text: res.data.answer }]);
       }
     } catch (err) {
       setMessages((prev) => [

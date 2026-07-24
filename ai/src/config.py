@@ -4,10 +4,10 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
+GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
 
-if not GEMINI_API_KEY:
+if not GROQ_API_KEY:
     # Don't raise at import time - lets the rest of the app boot without
-    # AI configured yet, since GEMINI_API_KEY is usually the last thing
+    # AI configured yet, since GROQ_API_KEY is usually the last thing
     # a team plugs in during setup.
     pass

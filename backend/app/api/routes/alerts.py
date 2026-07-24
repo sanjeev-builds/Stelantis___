@@ -9,6 +9,13 @@ from app.schemas.alert import AlertOut
 router = APIRouter(prefix="/alerts", tags=["alerts"])
 
 
+@router.get("", response_model=list[AlertOut])
+def list_all_alerts(limit: int = Query(200, ge=1, le=2000), db: Session = Depends(get_db)) -> list[Alert]:
+    """Fleet-wide alerts, newest first - backs the Dashboard and Alerts pages."""
+    stmt = select(Alert).where(Alert.resolved == 0).order_by(Alert.id.desc()).limit(limit)
+    return list(db.scalars(stmt))
+
+
 @router.get("/{vehicle_id}", response_model=list[AlertOut])
 def list_alerts(
     vehicle_id: str, limit: int = Query(100, ge=1, le=1000), db: Session = Depends(get_db)
