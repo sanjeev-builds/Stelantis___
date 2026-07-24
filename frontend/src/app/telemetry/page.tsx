@@ -3,7 +3,16 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Activity, Car, RefreshCw } from "lucide-react";
-import { TelemetryCharts } from "@/components/TelemetryCharts";
+import dynamic from "next/dynamic";
+
+// Recharts assigns internal element ids (clipPath/gradient) from a
+// module-level counter that increments differently on the server vs. the
+// client, so SSR-ing this component causes a hydration mismatch and the
+// whole chart subtree gets silently dropped. Client-only render avoids it.
+const TelemetryCharts = dynamic(
+  () => import("@/components/TelemetryCharts").then((mod) => mod.TelemetryCharts),
+  { ssr: false, loading: () => <div className="h-60 w-full" /> }
+);
 
 export default function TelemetryPage() {
   const [vehicles, setVehicles] = useState<any[]>([]);

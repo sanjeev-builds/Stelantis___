@@ -53,7 +53,19 @@ Database is SQLite (`backend/app.db`, gitignored) - no separate DB service to ru
 `ai/src` is on `PYTHONPATH` (see `Dockerfile` / run it locally with `ai/` as a sibling folder). Import directly, e.g.:
 
 ```python
-from gemini_client import explain_scores, chat
+from groq_client import explain_scores, chat
 ```
 
 See `ai/README.md` for details.
+
+## External integrations (`app/api/routes/external.py`)
+
+Read-only, real-world context around a vehicle - none of these feed the deterministic scoring engine:
+
+| Endpoint | Source | Auth |
+|---|---|---|
+| `GET /api/vehicles/{id}/recalls` | NHTSA `recallsByVehicle` | None needed |
+| `GET /api/vehicles/{id}/environment` | Open-Meteo current weather at the vehicle's last GPS fix | None needed |
+| `GET /api/vehicles/{id}/charging-stations` | Open Charge Map, within 25km of the vehicle's last GPS fix | Free key - set `OPENCHARGEMAP_API_KEY` in `.env`, get one at https://openchargemap.org/site/develop/api. Without it, the endpoint returns `{"configured": false, "stations": []}` instead of erroring. |
+
+All three degrade to an empty/safe response on any upstream failure or timeout (`app/services/external_apis.py`) - a slow third party never turns into a 500 on the dashboard.

@@ -64,7 +64,7 @@ export function AIChatPanel({ vehicleId }: AIChatPanelProps) {
             <Sparkles className="w-4 h-4" />
           </div>
           <div>
-            <h3 className="text-sm font-semibold text-slate-200">Gemini AI Diagnostic Assistant</h3>
+            <h3 className="text-sm font-semibold text-slate-200">Groq AI Diagnostic Assistant</h3>
             <p className="text-[10px] text-slate-400 font-mono">CONTEXT: {vehicleId}</p>
           </div>
         </div>
@@ -128,7 +128,7 @@ export function AIChatPanel({ vehicleId }: AIChatPanelProps) {
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder={`Ask Gemini about vehicle ${vehicleId}...`}
+          placeholder={`Ask Groq about vehicle ${vehicleId}...`}
           className="flex-1 bg-slate-950 border border-slate-800 text-slate-200 text-xs rounded-lg px-3.5 py-2.5 focus:outline-none focus:border-cyan-500/50"
         />
         <button

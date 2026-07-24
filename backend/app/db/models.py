@@ -121,7 +121,7 @@ class MaintenanceLog(Base):
     recommendation: Mapped[str] = mapped_column(Text)
     ai_explanation: Mapped[str] = mapped_column(Text, default="")
     urgency: Mapped[str] = mapped_column(String)  # ROUTINE | SOON | URGENT
-    source: Mapped[str] = mapped_column(String)  # RULE_ENGINE | GEMINI
+    source: Mapped[str] = mapped_column(String)  # RULE_ENGINE | GROQ
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=_utcnow)
 
 

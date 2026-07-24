@@ -8,7 +8,7 @@ Fill-in-the-blank templates for demo day. See also [notes.md](notes.md) for the 
 2. **Problem (30s):** Who has this problem, how big is it, why does it matter to Stellantis specifically.
 3. **Solution (30s):** "We built [product name], which [core value prop in one sentence]."
 4. **Live demo (60s):** Golden path only — the one flow that best shows the value. Rehearse this exact sequence, no improvising.
-5. **Tech highlight (20s):** One sentence on what's technically interesting (e.g. "real-time telemetry + Gemini-powered RAG diagnostics").
+5. **Tech highlight (20s):** One sentence on what's technically interesting (e.g. "deterministic health scoring, with Groq only ever explaining scores it never computed").
 6. **Close (15s):** Impact statement + what's next.
 
 ## 5-Minute Pitch (full version)
@@ -29,7 +29,7 @@ Fill-in-the-blank templates for demo day. See also [notes.md](notes.md) for the 
 | "What was the hardest technical part?" | [pick one real thing, be specific] |
 | "How is this different from [existing solution]?" | [differentiator] |
 | "What's the business model / cost to deploy?" | [rough honest estimate] |
-| "Is the AI output reliable / how do you handle hallucination?" | [mention RAG grounding, system prompt constraint in ai/src/prompts.py] |
+| "Is the AI output reliable / how do you handle hallucination?" | [mention that Groq only ever receives already-computed scores + raw telemetry - it explains, never invents numbers - plus the system prompt constraint in ai/src/prompts.py] |
 | "What did you NOT get to finish?" | [be honest — judges respect this more than overselling] |
 
 ## Innovation & Future Scope talking points

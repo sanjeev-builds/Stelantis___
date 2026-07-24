@@ -1,12 +1,13 @@
 
-# Stellantis Hackathon Project
+# Stellantis Hackathon Project — Cloud-Based Vehicle Health Dashboard
 
-A collaborative full-stack project built by a 5-person team for the Stellantis Tech Hackathon. The problem statement is revealed on-site — this repo is currently a **skeleton**: folder structure, Git workflow, and branch strategy are ready so the team can start coding within minutes of the brief dropping. This README is the single source of truth for branching and day-to-day Git workflow — read it before your first commit.
+A full-stack project built by a 5-person team for the Stellantis Tech Hackathon. This README is the single source of truth for branching and day-to-day Git workflow — read it before your first commit.
 
-> **Status:** Prepped, not scoped. `frontend/`, `backend/`, and `ai/` each contain a runnable starter template (generic dashboard, CRUD API, RAG pipeline) — not the real feature yet, since the problem statement is revealed on-site. Swap in the actual idea once the brief drops; see each folder's README for how.
+> **Status:** Built and demo-ready. The MVP is a **Cloud-Based Vehicle Health Dashboard**: deterministic battery/cybersecurity/overall health scoring, a trend-based predictive maintenance engine, and a Groq-powered explanation/chat layer on top of already-computed scores. See `docs/Vehicle-Health-Dashboard-Plan.md` for the full architecture and scoring spec, and `docs/presentation/` for pitch materials. Each of `frontend/`, `backend/`, and `ai/` has its own README with setup and structure detail.
 
 ## Table of Contents
 
+- [Screenshots](#screenshots)
 - [Tech Stack](#tech-stack)
 - [Repository Structure](#repository-structure)
 - [Getting Started](#getting-started)
@@ -19,14 +20,27 @@ A collaborative full-stack project built by a 5-person team for the Stellantis T
 - [Emergency Recovery](#emergency-recovery)
 - [Deployment](#deployment)
 
+## Screenshots
+
+| | |
+|---|---|
+| **Fleet Overview** — fleet-wide health scores, alert counts, connected vehicles directory | **Vehicle Detail** — 3 health gauges, live telemetry, AI diagnostic summary, NHTSA recalls, weather, nearby charging |
+| ![Fleet Overview](assets/screenshots/01-fleet-overview.jpg) | ![Vehicle Detail](assets/screenshots/02-vehicle-detail.jpg) |
+| **Telemetry History** — raw ECU time-series charts + reading-by-reading table | **Predictive Alerts** — severity-ranked, slope-of-degradation alerts fleet-wide |
+| ![Telemetry History](assets/screenshots/03-telemetry-history.jpg) | ![Predictive Alerts](assets/screenshots/04-predictive-alerts.jpg) |
+| **Maintenance** — AI-explained recommendations per triggered alert | **AI Advisor** — freeform chat grounded in a vehicle's live scores + telemetry |
+| ![Maintenance](assets/screenshots/05-maintenance.jpg) | ![AI Advisor](assets/screenshots/06-ai-advisor.jpg) |
+| **Custom Test Lab** — sliders/presets recompute health scores live, no reload | **Login** — JWT-authenticated demo access |
+| ![Custom Test Lab](assets/screenshots/07-custom-test-lab.jpg) | ![Login](assets/screenshots/08-login.jpg) |
+
 ## Tech Stack
 
 | Layer      | Technology                              |
 |------------|------------------------------------------|
-| Frontend   | Next.js, React, Tailwind CSS             |
-| Backend    | FastAPI, Python                          |
-| AI         | Gemini API, LangChain, ChromaDB          |
-| Database   | PostgreSQL                               |
+| Frontend   | Next.js (App Router), React, Tailwind CSS, Recharts |
+| Backend    | FastAPI, Python, SQLAlchemy, JWT auth    |
+| AI         | Groq LLM API (explanation/chat layer only — never computes scores) |
+| Database   | SQLite (single file — no separate DB service to run) |
 | Deployment | Vercel (frontend), Render/Fly.io (backend) |
 
 ## Repository Structure
@@ -39,7 +53,7 @@ project/
 ├── backend/                 # FastAPI service
 │   ├── app/
 │   └── tests/
-├── ai/                       # Gemini/LangChain/ChromaDB pipelines
+├── ai/                       # Groq explanation/chat client (imported by backend)
 │   ├── src/
 │   └── notebooks/
 ├── docs/                     # Architecture docs & presentation notes
@@ -62,8 +76,7 @@ project/
 - Git
 - Node.js 18+ and npm/pnpm
 - Python 3.11+
-- PostgreSQL 14+ (local or Docker), or a cloud instance
-- A Gemini API key
+- A Groq API key (SQLite needs no separate database server — it's a single file)
 
 ### Clone the repository
 
@@ -78,13 +91,13 @@ cd <repo>
 docker compose up --build
 ```
 
-Brings up Postgres, the FastAPI backend (http://localhost:8000/docs for Swagger), and the Next.js frontend (http://localhost:3000) together. Or run each service standalone with the scripts in `scripts/` — see `scripts/README.md`. Each of `frontend/`, `backend/`, and `ai/` has its own README with setup detail and how to extend the starter template once the real problem statement lands.
+Brings up the FastAPI backend (http://localhost:8000/docs for Swagger) and the Next.js frontend (http://localhost:3000) together — SQLite is a file inside the backend container/volume, so there's no separate database service. Or run each service standalone with the scripts in `scripts/` — see `scripts/README.md`. Each of `frontend/`, `backend/`, and `ai/` has its own README with setup and structure detail.
 
 ### While you're getting oriented
 
 - `datasets/` — mock vehicle/battery/maintenance/fleet JSON data (ready now) + links to real public datasets
-- `docs/cheatsheets/` — one-page references for Git, FastAPI, React/Tailwind, SQL, Docker, LangChain/Gemini
-- `docs/presentation/pitch-kit.md` — 3-min/5-min pitch templates and judge FAQ prep
+- `docs/cheatsheets/` — one-page references for Git, FastAPI, React/Tailwind, SQL, Docker
+- `docs/presentation/` — pitch kit, demo notes, and the full project explainer deck/doc
 
 ## Branch Strategy
 
@@ -111,7 +124,7 @@ main  ◄── integration  ◄── frontend / backend / ai  ◄── featur
 | Dev 1  | `frontend`      | `frontend/`          | UI components, pages, styling           |
 | Dev 2  | `frontend`      | `frontend/`          | State management, API integration       |
 | Dev 3  | `backend`       | `backend/`           | REST API, DB models, auth                |
-| Dev 4  | `ai`            | `ai/`                | RAG pipeline, prompt engineering, ChromaDB |
+| Dev 4  | `ai`            | `ai/`                | Groq client, prompt engineering, explanation/chat logic |
 | Dev 5  | `integration`   | `docs/`, root config | Wiring services together, deployment, docs, demo prep |
 
 Ownership is about primary responsibility, not an exclusive lock — anyone can touch any folder via a PR reviewed by the folder's owner.
@@ -304,6 +317,6 @@ git checkout <commit-hash> -- <path-to-file>
 
 - **Frontend** → Vercel, auto-deploys from `main` (Preview deploys can be wired to `integration` for staging).
 - **Backend** → Render or Fly.io, auto-deploys from `main`.
-- **Database** → Managed PostgreSQL instance (Render/Fly/Neon) referenced via `DATABASE_URL` env var.
+- **Database** → SQLite file (`backend/app.db`), persisted via a Docker volume or the backend host's filesystem — no separate managed DB instance needed at this scale.
 
 See `docs/architecture/` for system diagrams and `docs/presentation/` for demo-day materials.

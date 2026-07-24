@@ -21,6 +21,10 @@ export default function AlertsPage() {
   };
 
   useEffect(() => {
+    // Fetching from the backend on mount - synchronizing with an external
+    // system, not deriving state from props/state, so this is exactly the
+    // valid effect case despite the rule's generic warning.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     fetchAlerts();
   }, []);
 

@@ -1,11 +1,21 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { Activity, AlertTriangle, Car, Cpu, ShieldAlert, Wrench, MessageSquare, Sliders } from "lucide-react";
+import { usePathname, useRouter } from "next/navigation";
+import axios from "axios";
+import { Activity, AlertTriangle, Car, Cpu, ShieldAlert, Wrench, MessageSquare, Sliders, LogOut } from "lucide-react";
 
 export function Navigation() {
   const pathname = usePathname();
+  const router = useRouter();
+
+  if (pathname === "/login") return null;
+
+  function handleSignOut() {
+    localStorage.removeItem("access_token");
+    delete axios.defaults.headers.common["Authorization"];
+    router.replace("/login");
+  }
 
   const navItems = [
     { label: "Fleet Overview", href: "/", icon: Car },
@@ -63,6 +73,13 @@ export function Navigation() {
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
             <span>API ONLINE</span>
           </div>
+          <button
+            onClick={handleSignOut}
+            title="Sign out"
+            className="flex items-center space-x-1.5 text-slate-400 hover:text-red-400 hover:bg-red-950/30 border border-transparent hover:border-red-900/50 text-xs px-2.5 py-1.5 rounded-lg transition"
+          >
+            <LogOut className="w-3.5 h-3.5" />
+          </button>
         </div>
       </div>
     </header>

@@ -11,9 +11,10 @@ from pathlib import Path
 
 from sqlalchemy.orm import Session
 
-from app.db.models import Alert, HealthScore, Telemetry, Vehicle
+from app.db.models import Alert, HealthScore, MaintenanceLog, Telemetry, Vehicle
 from app.scoring.health import battery_health_score, cybersecurity_score, vehicle_health_score
 from app.scoring.predictive import evaluate_alerts
+from app.services import ai_client
 
 logger = logging.getLogger(__name__)
 
@@ -89,8 +90,31 @@ def seed_if_empty(db: Session) -> None:
                 }
             )
 
+        latest_reading = dict(readings[-1])
+        latest_scores = {
+            "vehicle_health_score": history[-1]["vehicle_health_score"],
+            "battery_health_score": history[-1]["battery_health_score"],
+        }
         for alert_data in evaluate_alerts(history):
             db.add(Alert(vehicle_id=vehicle_id, resolved=0, **alert_data))
+
+            # Mirrors predict_vehicle() in scoring_service.py so a fresh seed's
+            # Maintenance page isn't empty - alerts and maintenance_logs must
+            # be created together, one without the other leaves the
+            # Maintenance page showing "nominal" for vehicles that clearly
+            # have active alerts.
+            ai_explanation = ai_client.explain_scores(
+                {**latest_scores, "triggered_alert": alert_data["message"]}, latest_reading
+            )
+            db.add(
+                MaintenanceLog(
+                    vehicle_id=vehicle_id,
+                    recommendation=alert_data["message"],
+                    ai_explanation=ai_explanation,
+                    urgency="URGENT" if alert_data["severity"] in ("HIGH", "CRITICAL") else "SOON",
+                    source="RULE_ENGINE",
+                )
+            )
 
     db.commit()
     logger.info("Seed complete")

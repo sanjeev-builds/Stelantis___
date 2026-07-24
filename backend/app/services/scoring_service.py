@@ -1,5 +1,5 @@
 """Wires the pure scoring/predictive functions (app/scoring/) to the DB and
-to the Gemini explanation layer. Used by both the seed script and the
+to the Groq explanation layer. Used by both the seed script and the
 /analyze, /predict API routes so there's one place that defines "how a
 telemetry reading becomes stored scores and alerts."
 """
@@ -116,8 +116,23 @@ def predict_vehicle(db: Session, vehicle_id: str) -> list[Alert]:
         "battery_health_score": history[-1]["battery_health_score"],
     }
 
+    # Re-running /predict against the same trailing window of readings (e.g.
+    # a user clicking "Run Diagnostic Scoring Engine" twice) evaluates the
+    # exact same condition again - without this check it would append an
+    # identical alert + maintenance_log row every single click. Match on
+    # (category, message) rather than just category, since the message
+    # embeds the specific reading (e.g. exact coolant temp) that justifies it.
+    existing = {
+        (a.category, a.message)
+        for a in db.scalars(
+            select(Alert).where(Alert.vehicle_id == vehicle_id, Alert.resolved == 0)
+        )
+    }
+
     created: list[Alert] = []
     for alert_data in evaluate_alerts(history):
+        if (alert_data["category"], alert_data["message"]) in existing:
+            continue
         alert = Alert(vehicle_id=vehicle_id, resolved=0, **alert_data)
         db.add(alert)
         created.append(alert)
@@ -142,9 +157,9 @@ def predict_vehicle(db: Session, vehicle_id: str) -> list[Alert]:
 
 
 def build_vehicle_context(db: Session, vehicle_id: str) -> str:
-    """Plain-text summary of a vehicle's current state, passed to Gemini as
+    """Plain-text summary of a vehicle's current state, passed to Groq as
     context for /chat - not a vector search, just the structured data
-    directly (plan Step 2: Gemini never computes scores, only explains)."""
+    directly (plan Step 2: Groq never computes scores, only explains)."""
     vehicle = _get_vehicle(db, vehicle_id)
     telemetry = db.scalars(
         select(Telemetry).where(Telemetry.vehicle_id == vehicle_id).order_by(Telemetry.timestamp.desc())

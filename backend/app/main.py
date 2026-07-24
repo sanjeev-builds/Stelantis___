@@ -3,7 +3,7 @@ import logging
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.api.routes import actions, alerts, auth, health, health_scores, maintenance, telemetry, vehicles
+from app.api.routes import actions, alerts, auth, external, health, health_scores, maintenance, telemetry, vehicles
 from app.core.config import get_settings
 from app.core.logging import configure_logging
 from app.db.seed import seed_if_empty
@@ -31,6 +31,7 @@ app.include_router(health_scores.router, prefix="/api")
 app.include_router(alerts.router, prefix="/api")
 app.include_router(maintenance.router, prefix="/api")
 app.include_router(actions.router, prefix="/api")
+app.include_router(external.router, prefix="/api")
 
 
 @app.on_event("startup")

@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import {
   AreaChart,
   Area,
@@ -7,7 +8,6 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  ResponsiveContainer,
   LineChart,
   Line,
 } from "recharts";
@@ -15,6 +15,30 @@ import {
 interface TelemetryChartsProps {
   data: any[];
 }
+
+// Recharts' own <ResponsiveContainer> never resolves a usable size in this
+// app's dev environment (its ResizeObserver-driven measurement stays stuck),
+// so charts rendered inside it never mount. Tracking the container width
+// ourselves and passing fixed pixel dimensions to the chart sidesteps it
+// entirely - verified working, unlike ResponsiveContainer here.
+function useContainerWidth<T extends HTMLElement>() {
+  const ref = useRef<T | null>(null);
+  const [width, setWidth] = useState(0);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const update = () => setWidth(el.getBoundingClientRect().width);
+    update();
+    const observer = new ResizeObserver(update);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return { ref, width };
+}
+
+const CHART_HEIGHT = 240;
 
 export function TelemetryCharts({ data }: TelemetryChartsProps) {
   const formattedData = [...data].reverse().map((d) => ({
@@ -27,6 +51,9 @@ export function TelemetryCharts({ data }: TelemetryChartsProps) {
     speed: d.speed_kmh,
   }));
 
+  const { ref: thermalRef, width: thermalWidth } = useContainerWidth<HTMLDivElement>();
+  const { ref: ecuRef, width: ecuWidth } = useContainerWidth<HTMLDivElement>();
+
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
       {/* Battery Thermal & Voltage Trend */}
@@ -35,9 +62,9 @@ export function TelemetryCharts({ data }: TelemetryChartsProps) {
           <h4 className="text-sm font-semibold text-slate-200">Battery Thermal & Pack Voltage</h4>
           <span className="text-xs text-cyan-400 font-mono">HV BATTERY</span>
         </div>
-        <div className="h-60 w-full">
-          <ResponsiveContainer width="100%" height="100%">
-            <AreaChart data={formattedData}>
+        <div ref={thermalRef} className="h-60 w-full">
+          {thermalWidth > 0 && (
+            <AreaChart width={thermalWidth} height={CHART_HEIGHT} data={formattedData}>
               <defs>
                 <linearGradient id="tempGradient" x1="0" y1="0" x2="0" y2="1">
                   <stop offset="5%" stopColor="#f59e0b" stopOpacity={0.4} />
@@ -57,7 +84,7 @@ export function TelemetryCharts({ data }: TelemetryChartsProps) {
               <Area type="monotone" dataKey="batteryTemp" name="Temp (°C)" stroke="#f59e0b" fillOpacity={1} fill="url(#tempGradient)" />
               <Area type="monotone" dataKey="voltage" name="Voltage (V)" stroke="#38bdf8" fillOpacity={1} fill="url(#voltGradient)" />
             </AreaChart>
-          </ResponsiveContainer>
+          )}
         </div>
       </div>
 
@@ -67,9 +94,9 @@ export function TelemetryCharts({ data }: TelemetryChartsProps) {
           <h4 className="text-sm font-semibold text-slate-200">ECU Performance & CAN Errors</h4>
           <span className="text-xs text-emerald-400 font-mono">SYSTEM BUS</span>
         </div>
-        <div className="h-60 w-full">
-          <ResponsiveContainer width="100%" height="100%">
-            <LineChart data={formattedData}>
+        <div ref={ecuRef} className="h-60 w-full">
+          {ecuWidth > 0 && (
+            <LineChart width={ecuWidth} height={CHART_HEIGHT} data={formattedData}>
               <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" />
               <XAxis dataKey="time" stroke="#64748b" tick={{ fontSize: 11 }} />
               <YAxis stroke="#64748b" tick={{ fontSize: 11 }} />
@@ -79,7 +106,7 @@ export function TelemetryCharts({ data }: TelemetryChartsProps) {
               <Line type="monotone" dataKey="cpuUsage" name="CPU Usage (%)" stroke="#10b981" strokeWidth={2} dot={false} />
               <Line type="monotone" dataKey="canErrors" name="CAN Errors" stroke="#ef4444" strokeWidth={2} dot={{ r: 4 }} />
             </LineChart>
-          </ResponsiveContainer>
+          )}
         </div>
       </div>
     </div>

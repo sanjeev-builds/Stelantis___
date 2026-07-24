@@ -17,6 +17,12 @@ class Settings(BaseSettings):
 
     groq_api_key: str = ""
 
+    # Optional - free public APIs used by app/services/external_apis.py.
+    # NHTSA recalls and Open-Meteo need no key at all. Open Charge Map needs a
+    # free key from https://openchargemap.org/site/develop/api - the charging
+    # station endpoint degrades gracefully (returns configured=false) if unset.
+    openchargemap_api_key: str = ""
+
     cors_origins: list[str] = ["http://localhost:3000"]
 
 

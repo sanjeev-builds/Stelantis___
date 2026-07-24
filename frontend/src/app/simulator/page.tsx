@@ -72,7 +72,14 @@ export default function CustomSimulatorPage() {
   };
 
   useEffect(() => {
+    // Re-runs the deterministic scoring engine on the backend whenever a
+    // slider changes - synchronizing with an external system (the scoring
+    // engine), the valid effect case. runSimulation is intentionally
+    // omitted from deps: it's redefined every render, so including it
+    // would refetch on every render instead of only on slider changes.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     runSimulation();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     batteryCharge,
     batteryVoltage,
@@ -457,12 +464,13 @@ export default function CustomSimulatorPage() {
                 </div>
               </div>
 
-              {/* Gemini AI Diagnostic Summary Box */}
+              {/* Deterministic Diagnostic Summary Box - /simulate never calls the
+                  LLM (see actions.py), so this must not be attributed to AI. */}
               <div className="glass-card p-4 rounded-xl border border-cyan-500/30 bg-cyan-950/20 space-y-2">
                 <div className="flex items-center space-x-2 text-cyan-400">
                   <Sparkles className="w-4 h-4" />
                   <h4 className="text-xs font-semibold uppercase tracking-wider font-mono">
-                    Gemini AI Rationale
+                    Scoring Engine Rationale
                   </h4>
                 </div>
                 <p className="text-xs text-slate-200 leading-relaxed font-sans">{simulationResult.ai_summary}</p>

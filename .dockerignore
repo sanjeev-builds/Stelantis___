@@ -1,0 +1,16 @@
+**/.venv
+**/__pycache__
+**/*.pyc
+**/node_modules
+**/.next
+**/.git
+**/.chroma
+**/*.db
+**/.env
+**/.env.local
+!**/.env.example
+!**/.env.local.example
+docs/
+assets/
+scripts/
+.claude/

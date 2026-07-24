@@ -34,10 +34,10 @@ export default function AIAssistantPage() {
         <div>
           <div className="flex items-center space-x-2">
             <Sparkles className="w-5 h-5 text-cyan-400" />
-            <h1 className="text-xl font-bold text-white">Stellantis Gemini AI Diagnostic Advisor</h1>
+            <h1 className="text-xl font-bold text-white">Stellantis Groq AI Diagnostic Advisor</h1>
           </div>
           <p className="text-xs text-slate-400 mt-1">
-            Natural-language dialogue interface powered by Google Gemini with live ECU telemetry context.
+            Natural-language dialogue interface powered by Groq with live ECU telemetry context.
           </p>
         </div>
 

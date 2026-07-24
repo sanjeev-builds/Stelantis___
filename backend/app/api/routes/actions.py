@@ -96,9 +96,9 @@ def simulate(payload: SimulateRequest) -> SimulateResponse:
             }
         ]
     )
-    # Deterministic, not Gemini: the frontend re-runs /simulate on every
+    # Deterministic, not Groq: the frontend re-runs /simulate on every
     # slider tick, so a synchronous AI call here would make every keystroke
-    # wait on the network and would exhaust the same tight Gemini quota
+    # wait on the network and would exhaust the same tight Groq quota
     # /chat and /predict need. Matches /analyze's own rule of never putting
     # AI in a hot, high-frequency path.
     worst = min(("battery", battery), ("cybersecurity", cyber), ("overall", overall), key=lambda pair: pair[1])
@@ -120,7 +120,7 @@ def simulate(payload: SimulateRequest) -> SimulateResponse:
 @router.get("/summary/{vehicle_id}")
 def vehicle_summary(vehicle_id: str, db: Session = Depends(get_db)) -> dict[str, str]:
     """Plain-language AI summary of a vehicle's current state - backs the
-    vehicle detail page's 'Gemini AI Diagnostic Summary' card."""
+    vehicle detail page's 'Groq AI Diagnostic Summary' card."""
     try:
         context = build_vehicle_context(db, vehicle_id)
     except VehicleNotFoundError as exc:

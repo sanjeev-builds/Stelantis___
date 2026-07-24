@@ -17,11 +17,21 @@ import {
   ArrowLeft,
 } from "lucide-react";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { ScoreGauge } from "@/components/ScoreGauge";
 import { MetricCard } from "@/components/MetricCard";
-import { TelemetryCharts } from "@/components/TelemetryCharts";
 import { AlertsTable } from "@/components/AlertsTable";
 import { AIChatPanel } from "@/components/AIChatPanel";
+import { ExternalContextPanel } from "@/components/ExternalContextPanel";
+
+// Recharts assigns internal element ids (clipPath/gradient) from a
+// module-level counter that increments differently on the server vs. the
+// client, so SSR-ing this component causes a hydration mismatch and the
+// whole chart subtree gets silently dropped. Client-only render avoids it.
+const TelemetryCharts = dynamic(
+  () => import("@/components/TelemetryCharts").then((mod) => mod.TelemetryCharts),
+  { ssr: false, loading: () => <div className="h-60 w-full" /> }
+);
 
 export default function VehicleDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const resolvedParams = use(params);
@@ -57,7 +67,14 @@ export default function VehicleDetailPage({ params }: { params: Promise<{ id: st
   };
 
   useEffect(() => {
+    // Fetching from the backend when vehicleId changes - synchronizing with
+    // an external system, the valid effect case. fetchVehicleData is
+    // intentionally omitted from deps: it's redefined every render, so
+    // including it would refetch on every render instead of only on
+    // navigation to a different vehicle.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     fetchVehicleData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [vehicleId]);
 
   const handleRunAnalysis = async () => {
@@ -135,7 +152,7 @@ export default function VehicleDetailPage({ params }: { params: Promise<{ id: st
           </div>
           <div className="space-y-1">
             <h4 className="text-xs font-semibold text-cyan-300 uppercase tracking-wider font-mono">
-              Gemini AI Diagnostic Summary
+              Groq AI Diagnostic Summary
             </h4>
             <p className="text-xs text-slate-200 leading-relaxed">{aiSummary}</p>
           </div>
@@ -199,6 +216,12 @@ export default function VehicleDetailPage({ params }: { params: Promise<{ id: st
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <AlertsTable alerts={alerts} />
         <AIChatPanel vehicleId={vehicleId} />
+      </div>
+
+      {/* Real-World Context: Recalls, Weather, Charging */}
+      <div className="space-y-3">
+        <h3 className="text-sm font-semibold text-slate-200">Real-World Context</h3>
+        <ExternalContextPanel vehicleId={vehicleId} />
       </div>
     </div>
   );

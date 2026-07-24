@@ -1,5 +1,5 @@
 """Deterministic health scoring - no AI. Every formula here is pure math over
-telemetry + vehicle fields, auditable and independent of the Gemini layer.
+telemetry + vehicle fields, auditable and independent of the Groq layer.
 See docs/Vehicle-Health-Dashboard-Plan.md Steps 4-7.
 
 `telemetry` / `vehicle` accept either a dict (e.g. loaded straight from the
