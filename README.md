@@ -1,310 +1,114 @@
+# Stellantis Cloud-Based Vehicle Health & Predictive Maintenance Platform
 
-# Stellantis Hackathon Project
+> A full-stack Software-Defined Vehicle (SDV) cloud telemetry platform built for Stellantis connected vehicles (*Jeep, Fiat, Alfa Romeo, Peugeot, RAM, Maserati*).  
+> Integrates real-time ECU telemetry processing, auditable 0–100 health scoring, predictive degradation slope analytics, UNECE R155 cybersecurity compliance, and Google Gemini LLM diagnostics.
 
-A collaborative full-stack project built by a 5-person team for the Stellantis Tech Hackathon. The problem statement is revealed on-site — this repo is currently a **skeleton**: folder structure, Git workflow, and branch strategy are ready so the team can start coding within minutes of the brief dropping. This README is the single source of truth for branching and day-to-day Git workflow — read it before your first commit.
+---
 
-> **Status:** Prepped, not scoped. `frontend/`, `backend/`, and `ai/` each contain a runnable starter template (generic dashboard, CRUD API, RAG pipeline) — not the real feature yet, since the problem statement is revealed on-site. Swap in the actual idea once the brief drops; see each folder's README for how.
+## ⚡ Quick Start (Run Locally)
 
-## Table of Contents
+### Prerequisites
+- **Node.js 18+** & npm
+- **Python 3.11+**
+- **Google Gemini API Key** (Optional — offline domain fallback available)
 
-- [Tech Stack](#tech-stack)
-- [Repository Structure](#repository-structure)
-- [Getting Started](#getting-started)
-- [Branch Strategy](#branch-strategy)
-- [Team Roles & Folder Ownership](#team-roles--folder-ownership)
-- [Git Workflow](#git-workflow)
-- [Commit Message Conventions](#commit-message-conventions)
-- [Pull Request Workflow](#pull-request-workflow)
-- [Conflict Resolution](#conflict-resolution)
-- [Emergency Recovery](#emergency-recovery)
-- [Deployment](#deployment)
+---
 
-## Tech Stack
-
-| Layer      | Technology                              |
-|------------|------------------------------------------|
-| Frontend   | Next.js, React, Tailwind CSS             |
-| Backend    | FastAPI, Python                          |
-| AI         | Gemini API, LangChain, ChromaDB          |
-| Database   | PostgreSQL                               |
-| Deployment | Vercel (frontend), Render/Fly.io (backend) |
-
-## Repository Structure
-
-```
-project/
-├── frontend/               # Next.js + React + Tailwind app
-│   ├── src/
-│   └── public/
-├── backend/                 # FastAPI service
-│   ├── app/
-│   └── tests/
-├── ai/                       # Gemini/LangChain/ChromaDB pipelines
-│   ├── src/
-│   └── notebooks/
-├── docs/                     # Architecture docs & presentation notes
-│   ├── architecture/
-│   └── presentation/
-├── assets/                   # Shared images, diagrams, brand assets
-├── .github/
-│   ├── ISSUE_TEMPLATE/
-│   └── PULL_REQUEST_TEMPLATE.md
-├── README.md
-├── CONTRIBUTING.md
-├── LICENSE
-└── .gitignore
-```
-
-## Getting Started
-
-### Prerequisites (install before hackathon day)
-
-- Git
-- Node.js 18+ and npm/pnpm
-- Python 3.11+
-- PostgreSQL 14+ (local or Docker), or a cloud instance
-- A Gemini API key
-
-### Clone the repository
+### 1. Launch FastAPI Backend (Port 8000)
 
 ```bash
-git clone https://github.com/<org>/<repo>.git
-cd <repo>
+# Navigate to backend directory
+cd backend
+
+# Install Python dependencies
+pip install -r requirements.txt
+
+# Create .env file with your Gemini API key (optional)
+echo "GEMINI_API_KEY=your_gemini_api_key" > .env
+
+# Start FastAPI server
+PYTHONPATH=. python3 -m uvicorn app.main:app --host 0.0.0.0 --port 8000
 ```
 
-### Quickstart
+- 🌐 **Backend API Server**: `http://localhost:8000`
+- 📚 **Interactive Swagger OpenAPI Docs**: `http://localhost:8000/docs`
+
+---
+
+### 2. Launch Next.js 15 Dark Glassmorphism Frontend (Port 3000)
 
 ```bash
-docker compose up --build
+# Navigate to frontend directory
+cd frontend
+
+# Install Node modules
+npm install
+
+# Start Next.js development server
+npm run dev
 ```
 
-Brings up Postgres, the FastAPI backend (http://localhost:8000/docs for Swagger), and the Next.js frontend (http://localhost:3000) together. Or run each service standalone with the scripts in `scripts/` — see `scripts/README.md`. Each of `frontend/`, `backend/`, and `ai/` has its own README with setup detail and how to extend the starter template once the real problem statement lands.
+- 🏎️ **Vehicle Health Dashboard**: `http://localhost:3000`
+- 🎛️ **Custom Telemetry Test Lab**: `http://localhost:3000/simulator`
 
-### While you're getting oriented
+---
 
-- `datasets/` — mock vehicle/battery/maintenance/fleet JSON data (ready now) + links to real public datasets
-- `prompts/` — a Claude prompt library for common hackathon moments (debugging, architecture calls, presentation prep)
-- `docs/cheatsheets/` — one-page references for Git, FastAPI, React/Tailwind, SQL, Docker, LangChain/Gemini
-- `docs/presentation/pitch-kit.md` — 3-min/5-min pitch templates and judge FAQ prep
+## 🌟 Key Features & Highlights
 
-## Branch Strategy
+1. **📊 Fleet Overview Dashboard (`/`)**: Executive summary showing total fleet size, critical alerts count, high-risk predictions, average health score, and vehicle directory.
+2. **🏎️ Vehicle Deep-Dive Inspection (`/vehicle/[id]`)**: Detailed view with 3 SVG circular score gauges (Vehicle Health, HV Battery Pack, Cybersecurity Audit), real-time ECU metrics, Recharts time-series graphs, and a 3-sentence Gemini AI diagnostic summary.
+3. **🎛️ Custom Sensor Telemetry Test Lab (`/simulator`)**: Interactive form allowing invigilators to adjust Battery Charge %, Pack Voltage, Battery Temp, Coolant Temp, Oil Pressure, ECU Temp, Speed, RPM, CPU %, RAM %, CAN Bus Errors, Encryption Status, GPS coordinates, and DTC Fault Codes with real-time <50ms recalculated scores and predictive alerts.
+4. **📈 Time-Series Telemetry Analytics (`/telemetry`)**: Deep historical signal graphs (Pack Voltage, Battery Temp, CPU Load, CAN error spikes).
+5. **🔮 Predictive Maintenance Center (`/alerts`)**: Severity-coded alerts (`CRITICAL`, `HIGH`, `MEDIUM`, `LOW`) with countdown days to service.
+6. **🤖 Google Gemini AI Diagnostic Assistant (`/ai-assistant`)**: Natural-language Q&A assistant for drivers and service technicians.
 
-The repository uses **5 long-lived branches**. `main` is protected — no one commits to it directly.
+---
 
-| Branch        | Purpose                                              |
-|----------------|-------------------------------------------------------|
-| `main`         | Production-ready, always-deployable code. Protected. |
-| `frontend`     | Next.js/React/Tailwind feature work.                  |
-| `backend`      | FastAPI service development.                          |
-| `ai`           | Gemini/LangChain/ChromaDB pipeline work.              |
-| `integration`  | Where frontend + backend + ai are wired together and smoke-tested before merging to `main`. |
+## 🏗️ Architecture & Technology Stack
 
-Everyone branches personal work **off of** their team branch (e.g. `frontend/navbar-fix`), not off `main` directly.
+| Layer | Technology | Description |
+|---|---|---|
+| **Frontend** | Next.js 15 (React 18, TypeScript) | Server & Client components with App Router |
+| **Styling** | Tailwind CSS 3.4 | Dark Glassmorphism design system (`glass-panel`, `glass-card`) |
+| **Visualization** | Recharts 2.12 | Responsive dual-axis time-series area & line charts |
+| **Icons** | Lucide React | Vector automotive iconography |
+| **Backend** | FastAPI 0.115 (Python 3.12) | Asynchronous REST API framework with Uvicorn ASGI server |
+| **Database** | SQLite + SQLAlchemy 2.0 ORM | Single-file zero-config database (`app.db`) |
+| **Scoring Engine** | Pure Python Math (`scoring_engine.py`) | Auditable linear-clamp 0–100 health math |
+| **Rule Engine** | Degradation Slopes (`rule_engine.py`) | Trend slope analysis ($>0.5^\circ\text{C}$ rise/reading, CAN error escalation) |
+| **AI Intelligence** | Google Gemini API (`gemini-1.5-flash`) | Diagnostic text generator with offline fallback engine |
 
-```
-main  ◄── integration  ◄── frontend / backend / ai  ◄── feature branches (per developer)
-```
+---
 
-## Team Roles & Folder Ownership
+## 📄 Documentation Directory
 
-| Member | Primary Branch | Owns Folder(s)      | Focus                                  |
-|--------|-----------------|----------------------|-----------------------------------------|
-| Dev 1  | `frontend`      | `frontend/`          | UI components, pages, styling           |
-| Dev 2  | `frontend`      | `frontend/`          | State management, API integration       |
-| Dev 3  | `backend`       | `backend/`           | REST API, DB models, auth                |
-| Dev 4  | `ai`            | `ai/`                | RAG pipeline, prompt engineering, ChromaDB |
-| Dev 5  | `integration`   | `docs/`, root config | Wiring services together, deployment, docs, demo prep |
+Detailed documentation is available in the `docs/` folder:
+- 📖 [docs/BACKEND_ARCHITECTURE.md](docs/BACKEND_ARCHITECTURE.md): Complete backend specification & data flow.
+- 🎨 [docs/FRONTEND_ARCHITECTURE.md](docs/FRONTEND_ARCHITECTURE.md): Next.js component hierarchy & page breakdown.
+- 🛠️ [docs/TECH_STACK.md](docs/TECH_STACK.md): Full technology stack reference guide.
+- 💡 [docs/REAL_WORLD_IMPACT.md](docs/REAL_WORLD_IMPACT.md): Business value, ROI, and real-world automotive use cases.
+- 📝 [docs/Stellantis_Tech_Stack_and_Architecture.docx](docs/Stellantis_Tech_Stack_and_Architecture.docx): Formatted Word document.
 
-Ownership is about primary responsibility, not an exclusive lock — anyone can touch any folder via a PR reviewed by the folder's owner.
+---
 
-## Git Workflow
+## 🛠️ REST API Endpoints Overview
 
-### Repository Creation (done once, by whoever sets up the repo)
+| Method | Endpoint | Description |
+|---|---|---|
+| `GET` | `/api/vehicles` | List all 20 connected fleet vehicles |
+| `GET` | `/api/vehicles/{id}` | Get detailed specs & scores for a single vehicle |
+| `GET` | `/api/telemetry/{id}` | Fetch time-series ECU sensor telemetry |
+| `GET` | `/api/health/{id}` | Historical calculated health score snapshots |
+| `GET` | `/api/alerts` | List all active fleet-wide predictive alerts |
+| `GET` | `/api/maintenance/{id}` | Recommended repair actions & estimated hours |
+| `POST` | `/api/analyze/{id}` | Trigger scoring engine calculation live |
+| `POST` | `/api/predict/{id}` | Trigger predictive rule engine live |
+| `POST` | `/api/simulate` | Submit custom telemetry inputs & receive recalculated scores |
+| `POST` | `/api/chat` | Interactive Gemini AI diagnostic assistant chat |
+| `GET` | `/api/summary/{id}` | Gemini 3-sentence diagnostic rationale |
 
-```bash
-git init
-git add .
-git commit -m "Initial commit"
-git branch -M main
-git remote add origin https://github.com/<org>/<repo>.git
-git push -u origin main
-```
+---
 
-### Branch Creation (done once, pushed by the repo owner)
+## 📄 License
 
-```bash
-git checkout -b frontend
-git push -u origin frontend
-
-git checkout -b backend
-git push -u origin backend
-
-git checkout -b ai
-git push -u origin ai
-
-git checkout -b integration
-git push -u origin integration
-```
-
-### Every Developer: First-Time Setup
-
-```bash
-git clone https://github.com/<org>/<repo>.git
-cd <repo>
-git checkout <your-branch>       # frontend / backend / ai / integration
-git checkout -b <your-branch>/<your-name>-<feature>
-# e.g. git checkout -b frontend/alex-navbar
-```
-
-### Daily Workflow (every developer, every day)
-
-```bash
-git checkout <your-branch>
-git pull origin main              # or git pull origin <your-branch> for the shared team branch
-git add .
-git commit -m "Meaningful message"
-git push origin <branch>
-```
-
-Concretely, for a feature branch:
-
-```bash
-git checkout frontend/alex-navbar
-git fetch origin
-git merge origin/frontend          # stay in sync with your team branch
-git add .
-git commit -m "feat(frontend): add responsive navbar"
-git push origin frontend/alex-navbar
-```
-
-Then open a PR: `frontend/alex-navbar` → `frontend`.
-
-### Merge Workflow (team branch → main, done via reviewed PR only)
-
-```bash
-git checkout main
-git pull origin main
-git merge <branch>
-git push origin main
-```
-
-In practice this happens through `integration → main` after each team branch has been merged into `integration` and smoke-tested, all via Pull Requests — never a direct local push to `main`.
-
-## Commit Message Conventions
-
-Use [Conventional Commits](https://www.conventionalcommits.org/):
-
-```
-<type>(<scope>): <short summary>
-```
-
-| Type       | Use for                                      |
-|------------|-----------------------------------------------|
-| `feat`     | New feature                                   |
-| `fix`      | Bug fix                                       |
-| `docs`     | Documentation only                            |
-| `style`    | Formatting, no logic change                   |
-| `refactor` | Code change that neither fixes nor adds       |
-| `test`     | Adding/updating tests                         |
-| `chore`    | Tooling, deps, config                         |
-
-Examples:
-
-```
-feat(backend): add /api/chat endpoint
-fix(frontend): correct button alignment on mobile
-docs(ai): document RAG pipeline setup
-chore(integration): update docker-compose ports
-```
-
-## Pull Request Workflow
-
-1. Push your feature branch: `git push origin <branch>/<name>-<feature>`.
-2. Open a PR into your **team branch** (`frontend`, `backend`, or `ai`) — not into `main`.
-3. Fill out the PR template (auto-loaded from `.github/PULL_REQUEST_TEMPLATE.md`).
-4. Request review from at least 1 teammate (ideally the folder owner).
-5. Resolve review comments, keep the PR small and focused.
-6. Once approved, merge into the team branch.
-7. Periodically, the `integration` owner opens a PR: `frontend`/`backend`/`ai` → `integration`.
-8. After integration testing passes, open a final PR: `integration` → `main`.
-9. `main` requires PR + at least 1 approval + passing checks (branch protection — see below).
-
-### Recommended GitHub branch protection for `main`
-
-In GitHub: **Settings → Branches → Add rule** for `main`:
-- Require a pull request before merging
-- Require at least 1 approval
-- Require status checks to pass (if CI is set up)
-- Do not allow force pushes
-- Do not allow deletions
-
-## Conflict Resolution
-
-```bash
-git checkout <your-branch>
-git pull origin <target-branch>     # e.g. pull latest frontend into your feature branch
-# Git reports conflicting files
-```
-
-1. Open each conflicting file — look for `<<<<<<<`, `=======`, `>>>>>>>` markers.
-2. Decide which changes to keep (yours, theirs, or a manual combination). Talk to the other author if unclear.
-3. Remove the conflict markers once resolved.
-4. Stage and continue:
-
-```bash
-git add <resolved-files>
-git commit -m "fix: resolve merge conflict in <area>"
-git push origin <your-branch>
-```
-
-**To avoid conflicts in the first place:**
-- Pull/merge from your team branch at the start of every session, not just before pushing.
-- Keep PRs small and short-lived (merge within a day).
-- Don't edit files outside your owned folder without a heads-up in the team chat.
-- Communicate before touching shared config files (`package.json`, `requirements.txt`, `docker-compose.yml`).
-
-## Emergency Recovery
-
-If someone force-pushes over your work or you lose commits:
-
-**1. Recover from reflog (local, most common case):**
-```bash
-git reflog
-git checkout -b recovery-branch <commit-hash-from-reflog>
-```
-
-**2. Recover a branch that was deleted on GitHub but still exists locally:**
-```bash
-git push origin <local-branch-name>:<branch-name>
-```
-
-**3. Recover if `main` was force-pushed and you have an old local copy:**
-```bash
-git fetch origin
-git checkout -b main-recovery origin/main
-# compare against your last known-good local main
-git log main-recovery..main   # see what's missing
-# cherry-pick or push the missing commits back via a PR — never force-push main directly
-```
-
-**4. Recover uncommitted work you stashed and forgot:**
-```bash
-git stash list
-git stash apply stash@{0}
-```
-
-**5. If a file was deleted and committed:**
-```bash
-git log --all --full-history -- "**/<filename>"
-git checkout <commit-hash> -- <path-to-file>
-```
-
-**Golden rule:** never run `git push --force` on a shared branch (`main`, `frontend`, `backend`, `ai`, `integration`). If a force push is truly needed, use `git push --force-with-lease` and only after telling the team, and never on `main`.
-
-## Deployment
-
-- **Frontend** → Vercel, auto-deploys from `main` (Preview deploys can be wired to `integration` for staging).
-- **Backend** → Render or Fly.io, auto-deploys from `main`.
-- **Database** → Managed PostgreSQL instance (Render/Fly/Neon) referenced via `DATABASE_URL` env var.
-
-See `docs/architecture/` for system diagrams and `docs/presentation/` for demo-day materials.
+Built for the **Stellantis Tech Hackathon**. All rights reserved.
