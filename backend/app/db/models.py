@@ -55,6 +55,24 @@ class Telemetry(Base):
     gps_lat: Mapped[float] = mapped_column(Float)
     gps_lng: Mapped[float] = mapped_column(Float)
 
+    # DRIVING | PARKED | CHARGING | IDLE | OFFLINE | MAINTENANCE - fleet-ops
+    # state, distinct from connection_status (telematics link) below.
+    status: Mapped[str] = mapped_column(String, default="PARKED")
+
+    # battery_voltage above is the 12V accessory battery (see
+    # app/scoring/config.py NOMINAL_BATTERY_VOLTAGE). This is the separate
+    # HV traction pack, 300-800V class on a real EV - kept apart rather than
+    # overloading one field, and not fed into the existing battery scoring
+    # formula (which is deliberately unchanged).
+    hv_battery_voltage: Mapped[float] = mapped_column(Float, default=400.0)
+    state_of_health_pct: Mapped[float] = mapped_column(Float, default=100.0)
+    charging_state: Mapped[str] = mapped_column(String, default="NOT_CHARGING")  # CHARGING | DISCHARGING | NOT_CHARGING
+    ambient_temp_c: Mapped[float] = mapped_column(Float, default=20.0)
+    network_strength_pct: Mapped[float] = mapped_column(Float, default=100.0)
+    driver_mode: Mapped[str] = mapped_column(String, default="NORMAL")  # ECO | NORMAL | SPORT
+    regenerative_braking_active: Mapped[int] = mapped_column(Integer, default=0)
+    connection_status: Mapped[str] = mapped_column(String, default="ONLINE")  # ONLINE | OFFLINE
+
     @property
     def fault_codes(self) -> list[str]:
         return json.loads(self.fault_codes_json) if self.fault_codes_json else []

@@ -6,17 +6,17 @@ from prompts import CHAT_SYSTEM_PROMPT, EXPLAIN_SYSTEM_PROMPT, build_chat_prompt
 genai.configure(api_key=GEMINI_API_KEY)
 
 _explain_model = genai.GenerativeModel(
-    model_name="gemini-2.5-flash", system_instruction=EXPLAIN_SYSTEM_PROMPT
+    model_name="gemini-flash-latest", system_instruction=EXPLAIN_SYSTEM_PROMPT
 )
 _chat_model = genai.GenerativeModel(
-    model_name="gemini-2.5-flash", system_instruction=CHAT_SYSTEM_PROMPT
+    model_name="gemini-flash-latest", system_instruction=CHAT_SYSTEM_PROMPT
 )
 
-# Audit found /predict blocking 6+ seconds (2 alerts x ~3s each) with no
-# GEMINI_API_KEY configured, because an unconfigured/invalid-key call has no
-# bound on how long it takes to fail. This caps it so the fallback in
-# app/services/ai_client.py triggers quickly instead of hanging the request.
-_REQUEST_TIMEOUT_SECONDS = 5
+# Bounds how long an unconfigured/invalid-key call can hang before the
+# fallback in app/services/ai_client.py kicks in. Real calls with a valid key
+# and system_instruction measured ~10-11s round trip - 5s was cutting those
+# off before they could ever finish, so every real request fell back too.
+_REQUEST_TIMEOUT_SECONDS = 20
 
 
 def explain_scores(scores: dict, telemetry: dict) -> str:

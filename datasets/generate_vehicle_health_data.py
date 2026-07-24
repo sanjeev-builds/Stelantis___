@@ -110,6 +110,34 @@ def make_telemetry(vehicles: list[dict]) -> list[dict]:
             fault_codes: list[str] = []
             auth_attempts = 0
             encryption_status = "ENABLED"
+            speed_kmh = round(random.uniform(0, 120), 1)
+
+            # Vehicle status / charging / connectivity - varied deliberately so
+            # the demo has something of every value to show, not just DRIVING.
+            status = "DRIVING" if speed_kmh > 5 else "PARKED"
+            charging_state = "NOT_CHARGING"
+            connection_status = "ONLINE"
+
+            in_charging_window = v["vehicle_id"] in ("STL-EV-0002", "STL-EV-0008") and 20 <= i < 26
+            if in_charging_window:
+                speed_kmh = 0.0
+                status = "CHARGING"
+                charging_state = "CHARGING"
+                battery_pct = round(_ramp(i - 20, 6, 40, 85), 1)
+            elif speed_kmh <= 5 and random.random() < 0.15:
+                status = "IDLE"
+
+            in_offline_window = v["vehicle_id"] == "STL-EV-0004" and 50 <= i < 53
+            if in_offline_window:
+                status = "OFFLINE"
+                connection_status = "OFFLINE"
+
+            in_maintenance_window = v["vehicle_id"] == "STL-EV-0005" and i >= READINGS_PER_VEHICLE - 2
+            if in_maintenance_window:
+                status = "MAINTENANCE"
+                speed_kmh = 0.0
+
+            driver_mode = random.choice(["ECO", "NORMAL", "NORMAL", "SPORT"])
 
             if scenario == "battery_degrading" and trend_i >= 0:
                 battery_temp_c = round(_ramp(trend_i, trend_window, 35, 62), 1)
@@ -143,6 +171,8 @@ def make_telemetry(vehicles: list[dict]) -> list[dict]:
             lat = round(lat + drift, 5)
             lng = round(lng + drift, 5)
 
+            motor_rpm = random.randint(600, 6000) if status == "DRIVING" else 0
+
             records.append(
                 {
                     "vehicle_id": v["vehicle_id"],
@@ -153,8 +183,8 @@ def make_telemetry(vehicles: list[dict]) -> list[dict]:
                     "ecu_temp_c": round(random.uniform(35, 55), 1),
                     "cpu_usage_pct": round(random.uniform(10, 60), 1),
                     "ram_usage_pct": round(random.uniform(20, 70), 1),
-                    "speed_kmh": round(random.uniform(0, 120), 1),
-                    "motor_rpm": random.randint(0, 6000),
+                    "speed_kmh": speed_kmh,
+                    "motor_rpm": motor_rpm,
                     "engine_load_pct": round(random.uniform(5, 70), 1),
                     "coolant_temp_c": coolant_temp_c,
                     "oil_pressure_kpa": oil_pressure_kpa,
@@ -164,6 +194,15 @@ def make_telemetry(vehicles: list[dict]) -> list[dict]:
                     "unauthorized_access_attempts": auth_attempts,
                     "gps_lat": lat,
                     "gps_lng": lng,
+                    "status": status,
+                    "hv_battery_voltage": round(random.gauss(400, 8), 1),
+                    "state_of_health_pct": round(max(70.0, 100 - v["charge_cycles"] / 40), 1),
+                    "charging_state": charging_state,
+                    "ambient_temp_c": round(random.uniform(5, 30), 1),
+                    "network_strength_pct": round(0.0 if status == "OFFLINE" else random.uniform(55, 100), 1),
+                    "driver_mode": driver_mode,
+                    "regenerative_braking_active": status == "DRIVING" and random.random() < 0.3,
+                    "connection_status": connection_status,
                 }
             )
     return records

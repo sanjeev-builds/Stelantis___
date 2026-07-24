@@ -40,6 +40,15 @@ def ingest_telemetry(payload: TelemetryIn, db: Session = Depends(get_db)) -> Tel
         unauthorized_access_attempts=payload.unauthorized_access_attempts,
         gps_lat=payload.gps_lat,
         gps_lng=payload.gps_lng,
+        status=payload.status,
+        hv_battery_voltage=payload.hv_battery_voltage,
+        state_of_health_pct=payload.state_of_health_pct,
+        charging_state=payload.charging_state,
+        ambient_temp_c=payload.ambient_temp_c,
+        network_strength_pct=payload.network_strength_pct,
+        driver_mode=payload.driver_mode,
+        regenerative_braking_active=int(payload.regenerative_braking_active),
+        connection_status=payload.connection_status,
     )
     telemetry.fault_codes = payload.fault_codes
     db.add(telemetry)

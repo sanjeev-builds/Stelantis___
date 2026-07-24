@@ -8,3 +8,4 @@ class FleetSummaryRow(BaseModel):
     vehicle: VehicleOut
     latest_score: HealthScoreOut | None
     active_alert_count: int
+    latest_status: str | None = None

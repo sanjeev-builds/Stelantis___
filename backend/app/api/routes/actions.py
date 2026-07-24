@@ -77,6 +77,11 @@ def fleet_summary(db: Session = Depends(get_db)) -> list[FleetSummaryRow]:
     ).all()
     alert_counts = {row.vehicle_id: row.count for row in alert_count_rows}
 
+    telemetry_row_number = func.row_number().over(partition_by=Telemetry.vehicle_id, order_by=Telemetry.id.desc())
+    ranked_telemetry = select(Telemetry.vehicle_id, Telemetry.status, telemetry_row_number.label("rn")).subquery()
+    latest_status_rows = db.execute(select(ranked_telemetry).where(ranked_telemetry.c.rn == 1)).all()
+    latest_statuses = {row.vehicle_id: row.status for row in latest_status_rows}
+
     summary: list[FleetSummaryRow] = []
     for vehicle in vehicles:
         score_row = latest_scores.get(vehicle.vehicle_id)
@@ -98,6 +103,7 @@ def fleet_summary(db: Session = Depends(get_db)) -> list[FleetSummaryRow]:
                 vehicle=VehicleOut.model_validate(vehicle),
                 latest_score=latest_score,
                 active_alert_count=alert_counts.get(vehicle.vehicle_id, 0),
+                latest_status=latest_statuses.get(vehicle.vehicle_id),
             )
         )
     return summary
