@@ -3,20 +3,29 @@
 ## Structure
 ```
 app/
-├── main.py              # app entrypoint, router registration, CORS, startup
+├── main.py                 # app entrypoint, router registration, CORS, startup
 ├── core/
-│   ├── config.py         # env-based settings (pydantic-settings)
-│   ├── logging.py        # logging setup
-│   └── security.py       # JWT + password hashing
+│   ├── config.py            # env-based settings (pydantic-settings)
+│   ├── logging.py            # logging setup
+│   └── security.py            # JWT + password hashing
 ├── db/
-│   ├── session.py         # SQLAlchemy engine/session
-│   └── models.py          # ORM models (VehicleTelemetry is an example - copy the pattern)
-├── schemas/
-│   └── vehicle.py          # Pydantic request/response schemas
+│   ├── session.py             # SQLAlchemy engine/session
+│   ├── models.py               # ORM models: Vehicle, Telemetry, HealthScore, Alert, MaintenanceLog, User
+│   └── seed.py                  # seeds from datasets/mock/*.json on first startup
+├── scoring/
+│   ├── config.py                 # all scoring weights/thresholds - tune here, not in health.py
+│   ├── health.py                   # deterministic battery/cybersecurity/overall scores
+│   └── predictive.py                # trend-based (slope-of-degradation) alert rules
+├── services/
+│   ├── scoring_service.py            # wires scoring/predictive to the DB; used by seed + /analyze + /predict
+│   ├── ai_client.py                    # thin wrapper around ai/src/groq_client.py, fails safe
+│   └── external_apis.py                 # NHTSA recalls, Open-Meteo, Open Charge Map clients
+├── schemas/                              # one file per resource: vehicle, telemetry, health, alert,
+│                                          # maintenance, chat, fleet, simulate, external
 └── api/routes/
-    ├── health.py
-    ├── auth.py
-    └── vehicles.py
+    ├── health.py, auth.py, vehicles.py, telemetry.py, health_scores.py,
+    ├── alerts.py, maintenance.py, external.py
+    └── actions.py                          # /analyze, /predict, /chat, /simulate, /fleet-summary, /reset-demo-data
 ```
 
 ## Run standalone

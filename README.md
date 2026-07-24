@@ -95,7 +95,7 @@ Brings up the FastAPI backend (http://localhost:8000/docs for Swagger) and the N
 
 ### While you're getting oriented
 
-- `datasets/` — mock vehicle/battery/maintenance/fleet JSON data (ready now) + links to real public datasets
+- `datasets/` — mock `vehicles.json`/`telemetry.json` seed data (ready now) + links to real public datasets
 - `docs/cheatsheets/` — one-page references for Git, FastAPI, React/Tailwind, SQL, Docker
 - `docs/presentation/` — pitch kit, demo notes, and the full project explainer deck/doc
 
@@ -108,7 +108,7 @@ The repository uses **5 long-lived branches**. `main` is protected — no one co
 | `main`         | Production-ready, always-deployable code. Protected. |
 | `frontend`     | Next.js/React/Tailwind feature work.                  |
 | `backend`      | FastAPI service development.                          |
-| `ai`           | Gemini/LangChain/ChromaDB pipeline work.              |
+| `ai`           | Groq client / prompt engineering work.                |
 | `integration`  | Where frontend + backend + ai are wired together and smoke-tested before merging to `main`. |
 
 Everyone branches personal work **off of** their team branch (e.g. `frontend/navbar-fix`), not off `main` directly.

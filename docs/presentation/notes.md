@@ -4,7 +4,7 @@
 1. Problem statement
 2. Solution overview
 3. Live demo (golden path)
-4. Tech highlights (Gemini + RAG, FastAPI, Next.js)
+4. Tech highlights (deterministic scoring engine, Groq explanation layer, FastAPI, Next.js)
 5. What's next
 
 ## Demo Script

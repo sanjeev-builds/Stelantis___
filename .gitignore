@@ -15,6 +15,9 @@ Thumbs.db
 .env
 .env.*
 !.env*.example
+~$*.pptx
+~$*.docx
+~$*.xlsx
 
 # ==============================
 # Frontend (Next.js / React / Tailwind)
@@ -49,7 +52,7 @@ backend/.coverage
 backend/htmlcov/
 
 # ==============================
-# AI (LangChain / ChromaDB / Gemini)
+# AI (Groq client)
 # ==============================
 ai/__pycache__/
 ai/**/__pycache__/
@@ -59,6 +62,8 @@ ai/venv/
 ai/.ipynb_checkpoints/
 ai/**/*.ipynb_checkpoints/
 ai/.cache/
+ai/.chroma/
+ai/**/.chroma/
 
 # ==============================
 # Database
