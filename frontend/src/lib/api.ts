@@ -4,6 +4,24 @@ export const api = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000/api",
 });
 
+// Attaches the JWT LoginForm stores on sign-in, so the (now auth-guarded)
+// POST /reset-demo-data actually authenticates instead of 401ing silently.
+api.interceptors.request.use((config) => {
+  if (typeof window !== "undefined") {
+    const token = localStorage.getItem("access_token");
+    if (token) config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
+});
+
+export function isLoggedIn(): boolean {
+  return typeof window !== "undefined" && Boolean(localStorage.getItem("access_token"));
+}
+
+export function logout(): void {
+  localStorage.removeItem("access_token");
+}
+
 export type Vehicle = {
   vehicle_id: string;
   model: string;
@@ -36,6 +54,8 @@ export type Telemetry = {
   gps_lng: number;
 };
 
+export type TelemetryInput = Omit<Telemetry, "id" | "timestamp"> & { timestamp?: string };
+
 export type HealthScore = {
   id: number;
   vehicle_id: string;
@@ -60,6 +80,12 @@ export type Alert = {
   resolved: boolean;
 };
 
+export type FleetSummaryRow = {
+  vehicle: Vehicle;
+  latest_score: HealthScore | null;
+  active_alert_count: number;
+};
+
 export type MaintenanceLog = {
   id: number;
   vehicle_id: string;
@@ -80,8 +106,18 @@ export async function fetchVehicle(vehicleId: string): Promise<Vehicle> {
   return data;
 }
 
+export async function fetchFleetSummary(): Promise<FleetSummaryRow[]> {
+  const { data } = await api.get<FleetSummaryRow[]>("/fleet-summary");
+  return data;
+}
+
 export async function fetchTelemetry(vehicleId: string, limit = 100): Promise<Telemetry[]> {
   const { data } = await api.get<Telemetry[]>(`/telemetry/${vehicleId}`, { params: { limit } });
+  return data;
+}
+
+export async function ingestTelemetry(reading: TelemetryInput): Promise<Telemetry> {
+  const { data } = await api.post<Telemetry>("/telemetry", reading);
   return data;
 }
 

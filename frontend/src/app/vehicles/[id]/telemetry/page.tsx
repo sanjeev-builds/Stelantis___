@@ -44,10 +44,10 @@ export default function VehicleTelemetryPage() {
       </div>
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-        <ChartCard title="Battery %" data={series("battery_pct")} />
+        <ChartCard title="Battery charge (%)" data={series("battery_pct")} />
         <ChartCard title="Battery temperature (C)" data={series("battery_temp_c")} />
-        <ChartCard title="Coolant temperature (C)" data={series("coolant_temp_c")} />
-        <ChartCard title="Oil pressure (kPa)" data={series("oil_pressure_kpa")} />
+        <ChartCard title="Thermal management coolant temp (C)" data={series("coolant_temp_c")} />
+        <ChartCard title="Drivetrain lubrication pressure (kPa)" data={series("oil_pressure_kpa")} />
         <ChartCard title="CPU usage (%)" data={series("cpu_usage_pct")} />
         <ChartCard title="RAM usage (%)" data={series("ram_usage_pct")} />
         <ChartCard title="Speed (km/h)" data={series("speed_kmh")} />

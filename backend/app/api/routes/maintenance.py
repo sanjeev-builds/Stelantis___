@@ -16,7 +16,7 @@ router = APIRouter(prefix="/maintenance", tags=["maintenance"])
 
 @router.get("/{vehicle_id}", response_model=list[MaintenanceLogOut])
 def list_maintenance_logs(
-    vehicle_id: str, limit: int = Query(100, le=1000), db: Session = Depends(get_db)
+    vehicle_id: str, limit: int = Query(100, ge=1, le=1000), db: Session = Depends(get_db)
 ) -> list[MaintenanceLog]:
     if db.get(Vehicle, vehicle_id) is None:
         raise HTTPException(status_code=404, detail="Vehicle not found")

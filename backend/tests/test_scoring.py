@@ -68,6 +68,29 @@ def test_vehicle_health_score_perfect_conditions():
     assert score == 100.0
 
 
+def test_cybersecurity_score_never_exceeds_100_with_negative_auth_attempts():
+    # Regression test: audit found a live -3 unauthorized_access_attempts
+    # reading produced auth_score=145 and an overall cybersecurity_score of
+    # 109.0 - out of the documented 0-100 range. Nothing at the DB/API layer
+    # guarantees this field is non-negative, so the formula itself must clamp.
+    telemetry = {**HEALTHY_TELEMETRY, "unauthorized_access_attempts": -3}
+    score = cybersecurity_score(telemetry, HEALTHY_VEHICLE)
+    assert score <= 100.0
+    assert score == 100.0  # still perfect - clamped, not penalized for going negative
+
+
+def test_cybersecurity_score_never_exceeds_100_with_negative_versions_behind():
+    vehicle = {**HEALTHY_VEHICLE, "firmware_version": "999"}  # "newer than latest"
+    score = cybersecurity_score(HEALTHY_TELEMETRY, vehicle)
+    assert score <= 100.0
+
+
+def test_vehicle_health_score_never_exceeds_100_with_no_fault_codes():
+    telemetry = {**HEALTHY_TELEMETRY, "fault_codes": []}
+    score = vehicle_health_score(telemetry, HEALTHY_VEHICLE)
+    assert score <= 100.0
+
+
 def test_vehicle_health_score_penalized_by_fault_codes():
     faulty = {**HEALTHY_TELEMETRY, "fault_codes": ["P0A80", "P0217"]}
     score = vehicle_health_score(faulty, HEALTHY_VEHICLE)

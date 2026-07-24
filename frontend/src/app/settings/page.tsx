@@ -1,10 +1,11 @@
 "use client";
 
-import { RotateCcw } from "lucide-react";
+import { LogOut, RotateCcw } from "lucide-react";
 import { useEffect, useState } from "react";
+import { LoginForm } from "@/components/LoginForm";
 import { Navbar } from "@/components/Navbar";
 import { Sidebar } from "@/components/Sidebar";
-import { type Vehicle, fetchVehicles, resetDemoData } from "@/lib/api";
+import { type Vehicle, fetchVehicles, isLoggedIn, logout, resetDemoData } from "@/lib/api";
 import { DEFAULT_VEHICLE_KEY, REFRESH_INTERVAL_KEY, REFRESH_INTERVAL_OPTIONS } from "@/lib/settings";
 import { useStoredValue } from "@/lib/useStoredValue";
 
@@ -14,6 +15,11 @@ export default function SettingsPage() {
   const [refreshMs, setRefreshMs] = useStoredValue(REFRESH_INTERVAL_KEY, 0);
   const [resetting, setResetting] = useState(false);
   const [resetMessage, setResetMessage] = useState<string | null>(null);
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  useEffect(() => {
+    setLoggedIn(isLoggedIn());
+  }, []);
 
   useEffect(() => {
     fetchVehicles()
@@ -83,17 +89,37 @@ export default function SettingsPage() {
           <section className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm">
             <h2 className="mb-1 text-sm font-medium text-gray-700">Demo data</h2>
             <p className="mb-3 text-xs text-gray-400">
-              Wipes and regenerates all vehicles, telemetry, scores, and alerts from the mock dataset.
+              Wipes and regenerates all vehicles, telemetry, scores, and alerts from the mock dataset. This is
+              destructive, so it requires signing in.
             </p>
-            <button
-              onClick={handleReset}
-              disabled={resetting}
-              className="inline-flex items-center gap-2 rounded-md bg-gray-800 px-3 py-1.5 text-sm font-medium text-white hover:bg-gray-900 disabled:opacity-50"
-            >
-              <RotateCcw size={14} className={resetting ? "animate-spin" : ""} />
-              Regenerate mock data
-            </button>
-            {resetMessage && <p className="mt-2 text-xs text-gray-500">{resetMessage}</p>}
+            {loggedIn ? (
+              <>
+                <div className="mb-3 flex items-center justify-between text-xs text-gray-500">
+                  <span>Signed in as demo@hackathon.dev</span>
+                  <button
+                    onClick={() => {
+                      logout();
+                      setLoggedIn(false);
+                    }}
+                    className="inline-flex items-center gap-1 text-gray-400 hover:text-gray-600"
+                  >
+                    <LogOut size={12} />
+                    Sign out
+                  </button>
+                </div>
+                <button
+                  onClick={handleReset}
+                  disabled={resetting}
+                  className="inline-flex items-center gap-2 rounded-md bg-gray-800 px-3 py-1.5 text-sm font-medium text-white hover:bg-gray-900 disabled:opacity-50"
+                >
+                  <RotateCcw size={14} className={resetting ? "animate-spin" : ""} />
+                  Regenerate mock data
+                </button>
+                {resetMessage && <p className="mt-2 text-xs text-gray-500">{resetMessage}</p>}
+              </>
+            ) : (
+              <LoginForm onSuccess={() => setLoggedIn(true)} />
+            )}
           </section>
         </main>
       </div>

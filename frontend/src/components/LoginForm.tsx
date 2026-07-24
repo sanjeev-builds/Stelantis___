@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { api } from "@/lib/api";
 
-export function LoginForm() {
+export function LoginForm({ onSuccess }: { onSuccess?: () => void }) {
   const [email, setEmail] = useState("demo@hackathon.dev");
   const [password, setPassword] = useState("hackathon");
   const [error, setError] = useState<string | null>(null);
@@ -14,6 +14,7 @@ export function LoginForm() {
     try {
       const { data } = await api.post("/auth/login", { email, password });
       localStorage.setItem("access_token", data.access_token);
+      onSuccess?.();
     } catch {
       setError("Login failed - check backend is running and credentials are correct.");
     }

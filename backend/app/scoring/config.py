@@ -3,6 +3,13 @@ tunable live during the demo without touching the formulas themselves.
 See docs/Vehicle-Health-Dashboard-Plan.md Steps 4-7.
 """
 
+# This is the 12V accessory/starter battery (electronics, not propulsion) -
+# every seeded vehicle is EV-badged, so an unlabeled "battery_voltage" reads
+# as the HV traction pack (300-800V on a real EV) unless this is explicit.
+# Audit flagged this as a real automotive-credibility gap; fixing it for
+# real would mean adding separate HV-pack fields, which is a schema change,
+# not a config tweak - this comment plus the TelemetryIn field description
+# are the honest stopgap.
 NOMINAL_BATTERY_VOLTAGE = 12.6
 LATEST_FIRMWARE_VERSION = 20
 
