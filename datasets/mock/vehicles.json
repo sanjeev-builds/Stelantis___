@@ -1,0 +1,66 @@
+[
+  {
+    "vehicle_id": "STL-EV-0001",
+    "model": "Jeep Avenger EV",
+    "manufacture_year": 2025,
+    "firmware_version": "20",
+    "mileage_km": 21944.9,
+    "charge_cycles": 298
+  },
+  {
+    "vehicle_id": "STL-EV-0002",
+    "model": "Fiat 600e",
+    "manufacture_year": 2024,
+    "firmware_version": "20",
+    "mileage_km": 34030.9,
+    "charge_cycles": 216
+  },
+  {
+    "vehicle_id": "STL-EV-0003",
+    "model": "Peugeot e-2008",
+    "manufacture_year": 2023,
+    "firmware_version": "18",
+    "mileage_km": 115006.7,
+    "charge_cycles": 1213
+  },
+  {
+    "vehicle_id": "STL-EV-0004",
+    "model": "Citroen e-C4",
+    "manufacture_year": 2022,
+    "firmware_version": "16",
+    "mileage_km": 88462.3,
+    "charge_cycles": 791
+  },
+  {
+    "vehicle_id": "STL-EV-0005",
+    "model": "Chrysler Pacifica PHEV",
+    "manufacture_year": 2024,
+    "firmware_version": "18",
+    "mileage_km": 50109.3,
+    "charge_cycles": 1215
+  },
+  {
+    "vehicle_id": "STL-EV-0006",
+    "model": "Opel Corsa Electric",
+    "manufacture_year": 2021,
+    "firmware_version": "17",
+    "mileage_km": 99435.2,
+    "charge_cycles": 770
+  },
+  {
+    "vehicle_id": "STL-EV-0007",
+    "model": "DS 3 E-Tense",
+    "manufacture_year": 2025,
+    "firmware_version": "20",
+    "mileage_km": 35795.6,
+    "charge_cycles": 241
+  },
+  {
+    "vehicle_id": "STL-EV-0008",
+    "model": "Alfa Romeo Junior Elettrica",
+    "manufacture_year": 2023,
+    "firmware_version": "20",
+    "mileage_km": 3160.8,
+    "charge_cycles": 275
+  }
+]

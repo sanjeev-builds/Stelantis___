@@ -1,25 +1,22 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
-from app.db.models import VehicleTelemetry
+from app.db.models import Vehicle
 from app.db.session import get_db
-from app.schemas.vehicle import VehicleTelemetryCreate, VehicleTelemetryOut
+from app.schemas.vehicle import VehicleOut
 
 router = APIRouter(prefix="/vehicles", tags=["vehicles"])
 
 
-@router.get("/", response_model=list[VehicleTelemetryOut])
-def list_telemetry(db: Session = Depends(get_db), limit: int = 50) -> list[VehicleTelemetry]:
-    return list(db.scalars(select(VehicleTelemetry).limit(limit)))
+@router.get("", response_model=list[VehicleOut])
+def list_vehicles(db: Session = Depends(get_db)) -> list[Vehicle]:
+    return list(db.scalars(select(Vehicle).order_by(Vehicle.vehicle_id)))
 
 
-@router.post("/", response_model=VehicleTelemetryOut)
-def create_telemetry(
-    payload: VehicleTelemetryCreate, db: Session = Depends(get_db)
-) -> VehicleTelemetry:
-    record = VehicleTelemetry(**payload.model_dump())
-    db.add(record)
-    db.commit()
-    db.refresh(record)
-    return record
+@router.get("/{vehicle_id}", response_model=VehicleOut)
+def get_vehicle(vehicle_id: str, db: Session = Depends(get_db)) -> Vehicle:
+    vehicle = db.get(Vehicle, vehicle_id)
+    if vehicle is None:
+        raise HTTPException(status_code=404, detail="Vehicle not found")
+    return vehicle

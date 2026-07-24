@@ -13,6 +13,7 @@ services:
     volumes:
       - ./backend:/app
       - ./ai:/ai
+      - ./datasets/mock:/datasets/mock
 
   frontend:
     build:

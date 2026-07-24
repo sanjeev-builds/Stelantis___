@@ -10,6 +10,7 @@ RUN pip install --no-cache-dir -r requirements.txt -r ai-requirements.txt
 
 COPY backend/ .
 COPY ai/ /ai
+COPY datasets/mock/ /datasets/mock/
 ENV PYTHONPATH=/ai/src:$PYTHONPATH
 
 EXPOSE 8000
