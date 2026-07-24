@@ -56,9 +56,6 @@ ai/**/__pycache__/
 ai/*.pyc
 ai/.venv/
 ai/venv/
-ai/chroma_db/
-ai/.chroma/
-ai/**/chroma_db/
 ai/.ipynb_checkpoints/
 ai/**/*.ipynb_checkpoints/
 ai/.cache/

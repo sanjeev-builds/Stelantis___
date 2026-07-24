@@ -1,16 +1,16 @@
-# AI (Gemini + LangChain + ChromaDB RAG)
+# AI (Gemini)
 
 ## Structure
 ```
 src/
-├── config.py         # loads GEMINI_API_KEY, CHROMA_PERSIST_DIR from .env
-├── embeddings.py       # sentence-transformers embedding helper
-├── vectorstore.py       # ChromaDB collection (FAISS noted as an alternative)
-├── prompts.py            # RAG prompt templates
-└── rag_pipeline.py        # ingest() + answer_question() - the whole pipeline
+├── config.py         # loads GEMINI_API_KEY from .env
+├── prompts.py         # system prompts + chat prompt template
+└── gemini_client.py     # explain_scores() + chat() - the whole thing
 ```
 
-This is used as a **library imported directly by the backend**, not a separate microservice - simplest to run and deploy in a 7-hour hackathon. See `backend/README.md` for how it's wired in via `PYTHONPATH`.
+This is used as a **library imported directly by the backend**, not a separate microservice - simplest to run and deploy in a hackathon build. See `backend/README.md` for how it's wired in via `PYTHONPATH`.
+
+Gemini is an **explanation/chat layer only** — it never computes health scores itself. The backend's deterministic scoring engine computes scores from telemetry; `explain_scores()` takes those already-computed scores plus raw telemetry and turns them into natural language. `chat()` answers freeform questions about a vehicle using vehicle data passed in directly as context (no vector search/RAG — the data is structured, not a document corpus). See `docs/Vehicle-Health-Dashboard-Plan.md` for the full architecture.
 
 ## Run standalone / smoke test
 
@@ -21,13 +21,5 @@ python -m venv .venv
 pip install -r requirements.txt
 copy .env.example .env      # fill in GEMINI_API_KEY
 cd src
-python rag_pipeline.py
+python gemini_client.py
 ```
-
-## Swapping in real documents
-
-Replace the hardcoded list in `rag_pipeline.py`'s `if __name__ == "__main__"` block with `ingest(your_docs)` called from wherever documents come from (uploaded files, scraped manuals, DB rows). `answer_question(question)` is the one function the backend needs to call.
-
-## ChromaDB persistence
-
-Vectors persist to `ai/.chroma/` (already gitignored). Delete that folder to reset the vector store.

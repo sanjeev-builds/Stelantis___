@@ -9,7 +9,7 @@ class Settings(BaseSettings):
     app_name: str = "Hackathon API"
     environment: str = "development"
 
-    database_url: str = "postgresql+psycopg://hackathon:hackathon@localhost:5432/hackathon"
+    database_url: str = "sqlite:///./app.db"
 
     jwt_secret: str = "change-me-before-the-hackathon"
     jwt_algorithm: str = "HS256"

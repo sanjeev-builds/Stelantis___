@@ -5,4 +5,4 @@ if (-not (Test-Path ".venv")) {
 & .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt -q
 Set-Location src
-python rag_pipeline.py
+python gemini_client.py

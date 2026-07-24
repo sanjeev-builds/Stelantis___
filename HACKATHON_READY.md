@@ -2,6 +2,8 @@
 
 Status as of prep session, before the problem statement drops.
 
+**MVP chosen:** see `docs/Vehicle-Health-Dashboard-Plan.md` — repo has since switched from Postgres to SQLite and dropped LangChain/ChromaDB per that plan; some items below are now stale (kept for the environment/repo-scaffolding history, not as a live status of the DB/AI stack).
+
 ## Environment (this laptop)
 - [x] Git 2.51.0
 - [x] GitHub CLI 2.96.0
@@ -11,7 +13,7 @@ Status as of prep session, before the problem statement drops.
 - [x] VS Code 1.98.2
 - [x] Java 25 LTS
 - [x] GPU: RTX 4070 Laptop (not required — Gemini is a cloud API)
-- [ ] PostgreSQL / SQLite CLI — intentionally **not installed locally**; Postgres runs via `docker compose up` instead
+- [ ] PostgreSQL / SQLite CLI — intentionally **not installed locally**; not needed now that the DB is SQLite (a single file)
 - [ ] CUDA toolkit — intentionally skipped, not needed for this stack
 
 ## Repository
@@ -37,10 +39,10 @@ Status as of prep session, before the problem statement drops.
 - [x] `npm install` — installed, `tsc --noEmit` and `npm run build` both pass. Bumped `next`/`eslint`/`eslint-config-next`/`axios` off their originally-pinned versions after `npm audit` flagged a critical Next.js DoS CVE in 14.2.15 — now on `next@16.2.11`. 3 high-severity advisories remain in Next's own bundled transitive deps (postcss/sharp for image optimization); npm's only suggested fix is downgrading to `next@9.3.3`, which would be worse — left as-is
 
 ## AI (`ai/`)
-- [x] Gemini + LangChain + ChromaDB RAG pipeline (`ingest()` / `answer_question()`)
+- [x] Gemini client (`explain_scores()` / `chat()`) — LangChain/ChromaDB dropped per the chosen MVP plan
 - [x] Sentence-transformers embeddings, FAISS noted as an alternative
 - [x] Imported as a library by the backend (not a separate microservice) — simplest for a 7-hour build
-- [ ] Real `GEMINI_API_KEY` — placeholder only in `.env`, needs a real key before RAG calls work
+- [ ] Real `GEMINI_API_KEY` — placeholder only in `.env`, needs a real key before Gemini calls work
 - [x] `pip install -r requirements.txt` — installed into `ai/.venv`, all modules import cleanly
 
 ## Data
@@ -49,8 +51,8 @@ Status as of prep session, before the problem statement drops.
 - [x] `datasets/README.md` — links to real public datasets (NASA battery, UCI predictive maintenance, DOT traffic, etc.) if the real problem statement needs them
 
 ## Infra
-- [x] `docker-compose.yml` — Postgres + backend + frontend wired together, validated with `docker compose config`
-- [ ] `docker compose up --build` — not run: Docker Desktop's engine wasn't running on this laptop when tested. Start Docker Desktop, then run `docker compose up --build` (or `scripts\run-all.ps1`) to smoke-test the full stack together, including Postgres
+- [x] `docker-compose.yml` — backend + frontend wired together (no separate DB service — SQLite is a file inside the backend container/volume)
+- [ ] `docker compose up --build` — not yet run since the SQLite switch. Start Docker Desktop, then run `docker compose up --build` (or `scripts\run-all.ps1`) to smoke-test the full stack together
 
 ## Reference material
 - [x] `prompts/` — 13-file Claude prompt library (React, FastAPI, Python, SQL, Docker, debugging, architecture, presentation, judge Q&A, UI, performance, bug-fixing, deployment)
@@ -61,6 +63,6 @@ Status as of prep session, before the problem statement drops.
 
 ## Still needs a human decision (can't be prepped further blind)
 - **The actual problem statement** — everything above is idea-agnostic scaffolding, not the MVP itself
-- **Start Docker Desktop** and run `docker compose up --build` once, to smoke-test all three services together against real Postgres (backend/ai were only verified standalone against local venvs, not against a live DB)
+- **Start Docker Desktop** and run `docker compose up --build` once, to smoke-test both services together (backend/ai were only verified standalone against local venvs so far)
 - Real `GEMINI_API_KEY` needs to go in `backend/.env` and `ai/.env` (gitignored, safe to fill in directly)
 - `docs/team-workflow-notes.md` exists but is empty (untracked) — unclear if it's a stub you're still writing; left untouched

@@ -32,12 +32,14 @@ uvicorn app.main:app --reload
 
 API docs (Swagger): http://localhost:8000/docs
 
-## Run via Docker Compose (recommended - brings up Postgres too)
+## Run via Docker Compose
 
 From the repo root:
 ```bash
 docker compose up --build
 ```
+
+Database is SQLite (`backend/app.db`, gitignored) - no separate DB service to run.
 
 ## Adding a new endpoint
 
@@ -46,12 +48,12 @@ docker compose up --build
 3. Add a router in `app/api/routes/`, include it in `app/main.py`.
 4. Tables auto-create on startup (`Base.metadata.create_all`) - no migration step needed for hackathon speed.
 
-## Using the `ai/` RAG pipeline from here
+## Using `ai/` from here
 
 `ai/src` is on `PYTHONPATH` (see `Dockerfile` / run it locally with `ai/` as a sibling folder). Import directly, e.g.:
 
 ```python
-from rag_pipeline import answer_question
+from gemini_client import explain_scores, chat
 ```
 
 See `ai/README.md` for details.
